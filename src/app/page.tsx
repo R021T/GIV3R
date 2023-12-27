@@ -13,6 +13,10 @@ export default function Home() {
         <button className="login">LOGIN</button>
         <button className="register">REGISTER</button>
       </nav>
+      <Image className="heart" src={"/heart.png"} width={300} height={600} alt="Heart"/>
+      <div className="tagline">
+        <Image className="design" src={"/design.png"} width={250} height={350} alt="Heart"/>        
+      </div>
     </body>
   )
 }
