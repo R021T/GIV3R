@@ -1,27 +1,78 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+  background: rgb(108 172 228 / 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.giv3r-heart{
+  width: 10%;
+  height: 97vh;
+  position: absolute;
+  margin-top: -0.75%;
+  margin-left: -1%;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.giv3r-logo{
+  float: right;
+  width: 50%;
+  height: 97vh;
+}
+
+.giv3r{
+  margin-left: -50%;
+  margin-top: 15%;
+  width: 500px;
+  height: 500px;
+  border-radius: 100%;
+  background: white;
+  border: 0;
+}
+
+.logo{
+  margin-left: -10%;
+  margin-top: 20%;
+}
+
+.start{
+  margin-top: -45%;
+  margin-left: 50%;
+  width: 50%;
+  height: 97vh;
+  float: right;
+}
+
+.login{
+  width: 500px;
+  height: 200px;
+  margin-top: 13%;
+  margin-left: 25%;
+  border-radius: 50px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: xx-large;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  background: rgb(108 172 228 / 0.5);
+  border: 0;
+}
+
+.login:hover{
+  background: #6cace4;
+  color: white;
+}
+
+.register{
+  width: 500px;
+  height: 200px;
+  margin-top: 10%;
+  margin-left: 25%;
+  border-radius: 50px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: xx-large;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  background: rgb(108 172 228 / 0.5);
+  border: 0;
+}
+
+.register:hover{
+  background: #6cace4;
+  color: white;
 }
