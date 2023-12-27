@@ -15,7 +15,10 @@ export default function Home() {
       </nav>
       <Image className="heart" src={"/heart.png"} width={300} height={600} alt="Heart"/>
       <div className="tagline">
-        <Image className="design" src={"/design.png"} width={250} height={350} alt="Heart"/>        
+        <a className="tag">Spreading smiles,</a>
+        <br></br>
+        <a className="line"> without borders!</a>
+        <Image className="design" src={"/design.png"} width={250} height={350} alt="Heart"/>
       </div>
     </body>
   )
