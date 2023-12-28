@@ -9,166 +9,123 @@ body{
 .navbar{
   z-index: 1;
   position: fixed;
-  background: rgb(108 172 228 / 0.5);
+  background: white;
   width: 100%;
   height: 20%;
   top: 0;
   left: 0;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-}
-
-.title{
-  margin-top: -5%;
-  margin-left: -5%;
 }
 
 .home{
   position: relative;
-  top: -100%;
+  top: -97.5%;
   width: 10%;
   height: 100%;
-  border-radius: 50%;
   border: 0;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  background: rgb(108 172 228 / 0.5);
+  border-bottom-left-radius: 50px;
+  background: white;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 20px;
 }
 
 .home:hover{
+  box-shadow: 0 3px 10px rgba(50, 50, 50, 0.75);
   background: #6cace4;
   color: white;
 }
 
 .about{
   position: relative;
-  top: -100%;
+  top: -97.5%;
   width: 10%;
   height: 100%;
-  border-radius: 50%;
   border: 0;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  background: rgb(108 172 228 / 0.5);
+  background: white;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 20px;
 }
 
 .about:hover{
+  box-shadow: 0 3px 10px rgba(50, 50, 50, 0.75);
   background: #6cace4;
   color: white;
 }
 
 .events{
   position: relative;
-  top: -100%;
+  top: -97.5%;
   width: 10%;
   height: 100%;
-  border-radius: 50%;
   border: 0;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  background: rgb(108 172 228 / 0.5);
+  background: white;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 20px;
 }
 
 .events:hover{
+  box-shadow: 0 3px 10px rgba(50, 50, 50, 0.75);
   background: #6cace4;
   color: white;
 }
 
+.title{
+  margin-top: -5%;
+}
+
 .volunteer{
   position: relative;
-  top: -100%;
+  top: -97.5%;
+  left: 1%;
   width: 10%;
   height: 100%;
-  border-radius: 50%;
   border: 0;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  background: rgb(108 172 228 / 0.5);
+  background: white;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 20px;
 }
 
 .volunteer:hover{
+  box-shadow: 0 3px 10px rgba(50, 50, 50, 0.75);
   background: #6cace4;
   color: white;
 }
 
 .login{
   position: relative;
-  top: -100%;
+  top: -97.5%;
+  left: 1%;
   width: 10%;
   height: 100%;
-  border-radius: 50%;
   border: 0;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  background: rgb(108 172 228 / 0.5);
+  background: white;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 20px;
 }
 
 .login:hover{
+  box-shadow: 0 3px 10px rgba(50, 50, 50, 0.75);
   background: #6cace4;
   color: white;
 }
 
 .register{
   position: relative;
-  top: -100%;
+  top: -97.5%;
+  left: 1%;
   width: 10%;
   height: 100%;
-  border-radius: 50%;
   border: 0;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  background: rgb(108 172 228 / 0.5);
+  border-bottom-right-radius: 50px;
+  background: white;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 20px;
 }
 
 .register:hover{
+  box-shadow: 0 3px 10px rgba(50, 50, 50, 0.75);
   background: #6cace4;
   color: white;
-}
-
-.heart{
-  position: absolute;
-  left: 0;
-  margin-top: 9%;
-  filter: opacity(75%);
-}
-
-.tagline{
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  border-radius: 40px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  top: 35%;
-  left: 25%;
-  background: rgb(108 172 228 / 0.5);
-}
-
-.design{
-  position: absolute;
-  top: 3%;
-  left: 67.2%;
-  filter: opacity(25%);
-}
-
-.tag{
-  position: absolute;
-  font-family: 'Brush Script MT', cursive;
-  font-size: 60px;
-  left: 5%;
-  top: 30%;
-}
-
-.line{
-  position: absolute;
-  font-family: 'Brush Script MT', cursive;
-  font-size: 60px;
-  left: 20%;
-  top: 50%;
 }
