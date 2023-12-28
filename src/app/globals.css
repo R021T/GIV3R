@@ -129,3 +129,27 @@ body{
   background: #6cace4;
   color: white;
 }
+
+.image{
+  position: absolute;
+  width: 98%;
+  height: 80%;
+  left: 1%;
+  background: rgb(108 172 228 / 0.5);
+  border-radius: 20px;
+}
+
+.tagline{
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 10%;
+  font-size: 50px;
+  font-family: 'Brush Script MT', cursive;
+  filter: opacity(75%);
+}
+
+.smile{
+  margin-top: 5.6%;
+  margin-left: 30%;
+  filter: opacity(20%);
+}
