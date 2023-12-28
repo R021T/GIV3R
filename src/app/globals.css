@@ -142,8 +142,8 @@ body{
 .tagline{
   position: absolute;
   margin-top: 20%;
-  margin-left: 10%;
-  font-size: 50px;
+  margin-left: 5%;
+  font-size: 60px;
   font-family: 'Brush Script MT', cursive;
   filter: opacity(75%);
 }
