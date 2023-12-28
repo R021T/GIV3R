@@ -17,6 +17,10 @@ export default function Home() {
         <a className="tagline">Spreading smiles, without borders!</a>
         <Image className="smile" src={"/smile.png"} width={1000} height={500} alt="Smile"/>
       </div>
+      <a>
+        <div className="scroll"></div>
+        <div className="dot"></div>
+      </a>
     </body>
   )
 }
