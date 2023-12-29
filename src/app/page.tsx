@@ -25,6 +25,7 @@ export default function Home() {
         <div className="scroll"></div>
         <div className="dot"></div>
       </a>
+      <div className="bar"></div>
       <div className="what" id="what">
         <div className="card">
           <div className="front">
