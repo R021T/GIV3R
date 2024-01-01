@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
 
-.name{
-  color: blue;
+.bar{
+  position: absolute;
+  background: #6cace4;
+  width: 15%;
+  height: 100%;
+  top: 0;
+  left: 20%;
+  filter: opacity(50%);
+}
+
+.circle{
+  position: absolute;
+  background: white;
+  width: 25%;
+  height: 50%;
+  border-radius: 50%;
+  top: 25%;
+  left: 15%;
+}
+
+.logo{
+  position: absolute;
+  margin-top: 15%;
+  margin-left: -15%;
 }
