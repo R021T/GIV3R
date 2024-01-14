@@ -28,10 +28,10 @@ export default function Home() {
           <a className="tagline">Spreading smiles, without borders!</a>
           <Image className="smile" src={"/smile.png"} width={1000} height={500} alt="Smile"/>
         </div>
-        <a href="#what">
+        <Link href="#WeAreGIV3R">
           <div className="scroll"></div>
           <div className="dot"></div>
-        </a>
+        </Link>
         <div className="bar"></div>
         <div className="what" id="WeAreGIV3R">
           <div className="card">
