@@ -367,6 +367,7 @@ body{
     filter: opacity(50%);
     top: 2vh;
     margin-left: 3%;
+    border-radius: 20px;
   }
 
   .bar2{
@@ -375,10 +376,11 @@ body{
     position: absolute;
     width: 27%;
     height: 5vh;
-    background: #6cace4;
+    background: #2774bc;
     filter: opacity(50%);
     top: 2vh;
     margin-left: 70%;
+    border-radius: 20px;
   }
 
   .home{
@@ -443,6 +445,7 @@ body{
     left: 2.5vw;
     width: 95%;
     height: 39vh;
+    background: linear-gradient(rgb(108 172 228 / 0.5),rgb(39 116 188 / 0.5));
   }
   .smile{
     position: absolute;
