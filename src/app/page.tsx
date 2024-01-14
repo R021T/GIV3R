@@ -3,12 +3,12 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <body>
-      <section className="circle">
-        <Image className="logo" src={"/title.png"} width={400} height={200} alt="GIV3R"/>
-      </section>
-      <section className="base">
+    <>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>GIV3R</title>
+      </head>
+      <body>
         <nav className="navbar">
           <Link href="#LetsSpreadSmiles">
             <button className="home">HOME</button>
@@ -25,7 +25,7 @@ export default function Home() {
           </Link>
         </nav>
         <div className="image" id="LetsSpreadSmiles">
-          <a className="tagline">Spreading smiles, without borders!</a>
+          <p className="tagline">Spreading smiles, without borders!</p>
           <Image className="smile" src={"/smile.png"} width={1000} height={500} alt="Smile"/>
         </div>
         <Link href="#WeAreGIV3R">
@@ -83,7 +83,7 @@ export default function Home() {
         </div>
         <div className="line"></div>
         <p className="flip">Flip to find out!</p>
-      </section>
-    </body>
+      </body>
+    </>
   )
 }
