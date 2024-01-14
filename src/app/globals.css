@@ -357,13 +357,13 @@ body{
     display: contents;
   }
 
-  .horizontal{
+  .rectangle{
     position: absolute;
-    height: 50vh;
-    width: 100%;
+    height: 100vh;
+    width: 25%;
     background: #6cace4;
     filter: opacity(50%);
-    top: 50vh;
+    top: 0;
   }
 
   .circle{
@@ -402,14 +402,14 @@ body{
     display: contents;
   }
 
-  .vertical{
+  .rectangle{
     position: absolute;
-    width: 50%;
-    height: 100vh;
+    width: 100%;
+    height: 15%;
     background: #6cace4;
     filter: opacity(50%);
     left: 0;
-    top: 0;
+    top: 43%;
   }
 
   .circle{
