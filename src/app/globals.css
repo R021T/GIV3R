@@ -26,6 +26,10 @@ body{
   max-width: inherit;
 }
 
+.bar1,.bar2{
+  display: none;
+}
+
 .home{
   position: fixed;
   width: 10%;
@@ -348,62 +352,94 @@ body{
 
 @media screen and (width<1500px) and (orientation:portrait){
   .navbar{
-    height: 10vh;
+    height: 15vh;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
+
+  .bar1{
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 27%;
+    height: 5vh;
+    background: #6cace4;
+    filter: opacity(50%);
+    top: 2vh;
+    margin-left: 3%;
+  }
+
+  .bar2{
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 27%;
+    height: 5vh;
+    background: #6cace4;
+    filter: opacity(50%);
+    top: 2vh;
+    margin-left: 70%;
+  }
+
   .home{
-    width: 12%;
-    height: 10vh;
+    width: 16.6%;
+    height: 7vh;
     font-size: 7px;
+    margin-top: 8vh;
     border-bottom-left-radius: 20px;
   }
 
   .about{
-    width: 12%;
-    height: 10vh;
+    width: 16.6%;
+    height: 7vh;
     font-size: 7px;
-    margin-left: 12%;
+    margin-top: 8vh;
+    margin-left: 16.6%;
   }
 
   .events{
-    width: 12%;
-    height: 10vh;
+    width: 16.6%;
+    height: 7vh;
     font-size: 7px;
-    margin-left: 24%;
+    margin-top: 8vh;
+    margin-left: 33.2%;
   }
 
   .title{
     z-index: -1;
     width: 50%;
     height: auto;
-    margin-top: -1vh;
-    margin-left: 24%;
+    margin-top: -1.5vh;
+    margin-left: 25%;
   }
 
   .volunteer{
-    width: 12%;
-    height: 10vh;
+    width: 17%;
+    height: 7vh;
     font-size: 7px;
-    margin-left: 64%;
+    margin-left: 49.7%;
+    margin-top: 8vh;
   }
 
   .login{
-    width: 12%;
-    height: 10vh;
+    width: 16.6%;
+    height: 7vh;
     font-size: 7px;
-    margin-left: 76%;
+    margin-left: 66.7%;
+    margin-top: 8vh;
   }
 
   .register{
-    width: 12%;
-    height: 10vh;
+    width: 16.6%;
+    height: 7vh;
     font-size: 7px;
+    margin-left: 83.4%;
+    margin-top: 8vh;
     border-bottom-right-radius: 20px;
-    margin-left: 88%;
   }
 
   .image{
+    top: 8vh;
     left: 2.5vw;
     width: 95%;
     height: 39vh;
@@ -427,14 +463,14 @@ body{
     width: 9vw;
     height: 7vh;
     left: 45%;
-    top: 47vh;
+    top: 57vh;
   }
 
   .dot{
     position: absolute;
     width: 4vw;
     height: 1.8vh;
-    top: 56vh;
+    top: 66vh;
     left: 47.5%;
   }
 

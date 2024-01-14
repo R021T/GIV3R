@@ -10,6 +10,8 @@ export default function Home() {
       </head>
       <body>
         <nav className="navbar">
+          <div className="bar1"></div>
+          <div className="bar2"></div>
           <Link href="#LetsSpreadSmiles">
             <button className="home">HOME</button>
           </Link>
