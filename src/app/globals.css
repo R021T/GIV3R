@@ -363,7 +363,7 @@ body{
     width: 100%;
     background: #6cace4;
     filter: opacity(50%);
-    bottom: 0;
+    top: 50vh;
   }
 
   .circle{
