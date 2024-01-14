@@ -358,11 +358,12 @@ body{
   }
 
   .horizontal{
-    height: 50%;
+    position: absolute;
+    height: 50vh;
     width: 100%;
     background: #6cace4;
     filter: opacity(50%);
-    margin-top: 50vh;
+    bottom: 0;
   }
 
   .circle{
