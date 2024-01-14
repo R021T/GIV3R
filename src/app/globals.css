@@ -359,7 +359,7 @@ body{
 
   .horizontal{
     position: absolute;
-    height: 100%;
+    height: 50vh;
     width: 100%;
     background: #6cace4;
     filter: opacity(50%);
