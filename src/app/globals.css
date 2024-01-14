@@ -358,7 +358,6 @@ body{
   }
 
   .horizontal{
-    position: absolute;
     height: 50%;
     width: 100%;
     background: #6cace4;
