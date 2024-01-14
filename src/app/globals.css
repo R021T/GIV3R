@@ -359,11 +359,11 @@ body{
 
   .horizontal{
     position: fixed;
-    height: 50%;
+    height: 50vh;
     width: 100%;
     background: #6cace4;
     filter: opacity(50%);
-    top: 50%;
+    bottom: 0;
   }
 
   .circle{
