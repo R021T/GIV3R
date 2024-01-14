@@ -4,11 +4,8 @@ import Link from "next/link"
 export default function Home() {
   return (
     <body>
-      <section className="top">
-        <div className="rectangle"></div>
-        <div className="circle">
-          <Image className="logo" src={"/title.png"} width={400} height={200} alt="GIV3R"/>
-        </div>
+      <section className="circle">
+        <Image className="logo" src={"/title.png"} width={400} height={200} alt="GIV3R"/>
       </section>
       <section className="base">
         <title>GIV3R</title>
