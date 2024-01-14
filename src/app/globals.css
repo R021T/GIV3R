@@ -358,7 +358,7 @@ body{
   }
 
   .horizontal{
-    position: fixed;
+    position: absolute;
     height: 50vh;
     width: 100%;
     background: #6cace4;
@@ -403,7 +403,7 @@ body{
   }
 
   .vertical{
-    position: fixed;
+    position: absolute;
     width: 50%;
     height: 100vh;
     background: #6cace4;
