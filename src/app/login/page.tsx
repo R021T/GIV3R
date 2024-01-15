@@ -1,4 +1,4 @@
-import styles from "./register.module.css"
+import styles from "./login.module.css"
 import Image from "next/image"
 
 export default function Register() {
