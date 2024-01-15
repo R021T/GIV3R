@@ -19,9 +19,9 @@ export default function Home() {
           <button className="events">EVENTS</button>
           <Image className="title" src={"/title.png"} width={600} height={300} alt="GIV3R"/>
           <button className="volunteer">VOLUNTEER</button>
-          <button className="login">LOGIN</button>
-          <Link href={"/register"}>
-            <button className="register">REGISTER</button>
+          <button className="contact">CONTACT</button>
+          <Link href={"/login"}>
+            <button className="login">REGISTER</button>
           </Link>
         </nav>
         <div className="image" id="LetsSpreadSmiles">
