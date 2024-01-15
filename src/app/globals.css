@@ -26,7 +26,7 @@ body{
   max-width: inherit;
 }
 
-.bar1,.bar2{
+.rectangle{
   display: none;
 }
 
@@ -424,6 +424,7 @@ body{
     left: 2.5vw;
     width: 95%;
     height: 39vh;
+    border-radius: 10px;
   }
   .smile{
     position: absolute;
@@ -433,9 +434,19 @@ body{
     height: 32.4vh;
   }
 
+  .rectangle{
+    position: absolute;
+    display: block;
+    background: #6cace4;
+    filter: opacity(50%);
+    width: 100%;
+    height: 7vh;
+    top: 48.5vh;
+  }
+
   .tagline{
-    font-size: 7vw;
-    top: 35vh;
+    font-size: 6vw;
+    top: 33vh;
     margin-left: 0;
   }
 

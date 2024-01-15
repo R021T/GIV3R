@@ -21,9 +21,10 @@ export default function Home() {
           <button className="volunteer">VOLUNTEER</button>
           <button className="contact">CONTACT</button>
           <Link href={"/login"}>
-            <button className="login">REGISTER</button>
+            <button className="login">LOGIN</button>
           </Link>
         </nav>
+        <div className="rectangle"></div>
         <div className="image" id="LetsSpreadSmiles">
           <p className="tagline">Spreading smiles, without borders!</p>
           <Image className="smile" src={"/smile.png"} width={1000} height={500} alt="Smile"/>
