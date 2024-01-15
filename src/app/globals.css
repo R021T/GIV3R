@@ -429,9 +429,9 @@ body{
   }
 
   .tagline{
-    font-size: 12.5vw;
+    font-size: 10vw;
     top: 32vh;
-    left: 7.5%;
+    left: 15%;
   }
 
   .scroll{
@@ -439,14 +439,14 @@ body{
     width: 8vw;
     height: 7vh;
     left: 47.5%;
-    top: 70vh;
+    top: 65vh;
   }
 
   .dot{
     position: absolute;
     width: 3.5vw;
     height: 1.5vh;
-    top: 79vh;
+    top: 74vh;
     left: 49.75%;
   }
 
