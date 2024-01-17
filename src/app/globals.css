@@ -489,35 +489,35 @@ body{
   }
 
   .bar{
-    height: 95vh;
+    height: 85vh;
     top: 0;
     margin-top: 95vh;
     filter: opacity(25%);
   }
 
   .what{
-    width: 50%;
-    height: 33vh;
+    width: 45%;
+    height: 30vh;
     margin-top: 90vh;
-    margin-left: 25%;
+    margin-left: 27.5%;
     top: 0;
     left: 0;
   }
 
   .why{
-    width: 50%;
-    height: 33vh;
-    margin-top: 127.5vh;
-    margin-left: 25%;
+    width: 45%;
+    height: 30vh;
+    margin-top: 123.5vh;
+    margin-left: 27.5%;
     top: 0;
     left: 0;
   }
 
   .how{
-    width: 50%;
-    height: 33vh;
-    margin-top: 165vh;
-    margin-left: 25%;
+    width: 45%;
+    height: 30vh;
+    margin-top: 157vh;
+    margin-left: 27.5%;
     top: 0;
     left: 0;
   }
@@ -527,13 +527,13 @@ body{
   }
 
   .is{
-    font-size: 10vw;
+    font-size: 8vw;
     margin-top: 5vh;
-    margin-left: 2.5vw;
+    margin-left: 5vw;
   }
 
   .desc{
-    font-size: 3.5vw;
+    font-size: 3vw;
     margin-left: 2vw;
   }
 }
