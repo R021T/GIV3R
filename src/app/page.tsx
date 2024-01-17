@@ -33,54 +33,52 @@ export default function Home() {
           <div className="scroll"></div>
           <div className="dot"></div>
         </Link>
-        <div className="aboutus" id="WeAreGIV3R">
-          <div className="bar"></div>
-          <div className="what">
-            <div className="card">
-              <div className="front">
-                <p className="is">What
-                  <br/>
-                  is
-                  <br/>
-                  <b className="giv3r">GIV3R</b>
-                  ?
-                </p>
-              </div>
-              <div className="back">
-                <p className="desc">GIV3R is a decentralized charity portal which aims at integrating security, transparency and tracking for your valuable donations to various NGOs.</p>
-              </div>
+        <div className="bar"></div>
+        <div className="what" id="WeAreGIV3R">
+          <div className="card">
+            <div className="front">
+              <p className="is">What
+                <br/>
+                is
+                <br/>
+                <b className="giv3r">GIV3R</b>
+                ?
+              </p>
+            </div>
+            <div className="back">
+              <p className="desc">GIV3R is a decentralized charity portal which aims at integrating security, transparency and tracking for your valuable donations to various NGOs.</p>
             </div>
           </div>
-          <div className="why">
-            <div className="card">
-              <div className="front">
-                <p className="is">Why
-                  <br/>
-                  use
-                  <br/>
-                  <b className="giv3r">GIV3R</b>
-                  ?
-                </p>
-              </div>
-              <div className="back">
-                <p className="desc">GIV3R is a decentralized charity portal which aims at integrating security, transparency and tracking for your valuable donations to various NGOs.</p>
-              </div>
+        </div>
+        <div className="why">
+          <div className="card">
+            <div className="front">
+              <p className="is">Why
+                <br/>
+                use
+                <br/>
+                <b className="giv3r">GIV3R</b>
+                ?
+              </p>
+            </div>
+            <div className="back">
+              <p className="desc">GIV3R is a decentralized charity portal which aims at integrating security, transparency and tracking for your valuable donations to various NGOs.</p>
             </div>
           </div>
-          <div className="how">
-            <div className="card">
-              <div className="front">
-                <p className="is">How
-                  <br/>
-                  to use
-                  <br/>
-                  <b className="giv3r">GIV3R</b>
-                  ?
-                </p>
-              </div>
-              <div className="back">
-                <p className="desc">GIV3R is a decentralized charity portal which aims at integrating security, transparency and tracking for your valuable donations to various NGOs.</p>
-              </div>
+        </div>
+        <div className="how">
+          <div className="card">
+            <div className="front">
+              <p className="is">How
+                <br/>
+                to use
+                <br/>
+                <b className="giv3r">GIV3R</b>
+                ?
+              </p>
+            </div>
+            <div className="back">
+              <p className="desc">GIV3R is a decentralized charity portal which aims at integrating security, transparency and tracking for your valuable donations to various NGOs.</p>
             </div>
           </div>
         </div>
