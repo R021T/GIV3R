@@ -489,15 +489,15 @@ body{
   }
 
   .bar{
-    height: 15vh;
+    height: 35vh;
     top: 0;
-    margin-top: 110vh;
+    margin-top: 95vh;
     filter: opacity(25%);
   }
 
   .what{
     width: 35%;
-    height: 25vh;
+    height: 22vh;
     margin-top: 90vh;
     margin-left: 10%;
     top: 0;
@@ -506,7 +506,7 @@ body{
 
   .why{
     width: 35%;
-    height: 25vh;
+    height: 22vh;
     margin-top: 90vh;
     margin-left: 55%;
     top: 0;
@@ -515,8 +515,8 @@ body{
 
   .how{
     width: 35%;
-    height: 25vh;
-    margin-top: 120vh;
+    height: 22vh;
+    margin-top: 116vh;
     margin-left: 32.5%;
     top: 0;
     left: 0;
@@ -527,7 +527,7 @@ body{
   }
 
   .is{
-    font-size: 8vw;
+    font-size: 7vw;
     margin-top: 4vh;
     margin-left: 2vw;
   }
