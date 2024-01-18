@@ -83,8 +83,10 @@ body{
 
 .title{
   position: fixed;
-  margin-top: -5%;
-  margin-left: 30%;
+  width: 35vw;
+  height: 35vh;
+  margin-top: -7vh;
+  margin-left: 32%;
 }
 
 .volunteer{
@@ -155,15 +157,17 @@ body{
   justify-content: center;
   align-items: center;
   position: absolute;
-  margin-top: 20%;
+  margin-top: 45vh;
   margin-left: 5%;
-  font-size: 60px;
+  font-size: 3.5vw;
   font-family: 'Brush Script MT', cursive;
   filter: opacity(75%);
 }
 
 .smile{
-  margin-top: 5.6%;
+  width: 65vw;
+  height: 60vh;
+  margin-top: 20vh;
   margin-left: 30%;
   filter: opacity(20%);
 }
@@ -243,6 +247,7 @@ body{
   top: 110%;
   left: 15%;
   width: 20%;
+  max-height: 25rem;
   height: 50%;
   font-family: 'Plus Jakarta Sans', sans-serif;
   perspective: 1000px;
@@ -259,6 +264,7 @@ body{
   left: 40.5%;
   width: 20%;
   height: 50%;
+  max-height: 25rem;
   font-family: 'Plus Jakarta Sans', sans-serif;
   perspective: 1000px;
 }
@@ -274,6 +280,7 @@ body{
   left: 65.5%;
   width: 20%;
   height: 50%;
+  max-height: 25rem;
   font-family: 'Plus Jakarta Sans', sans-serif;
   perspective: 1000px;
 }
@@ -307,7 +314,7 @@ body{
   height: 100%;
   margin-top: 5%;
   padding-left: 5%;
-  font-size: 60px;
+  font-size: 8vh;
 }
 
 .giv3r{
@@ -539,8 +546,8 @@ body{
     padding: 0;
   }
 }
-
-@media screen and (width<1000px) and (height<450px) and (orientation:landscape){
+/*
+@media screen and (height>1500px){
   .navbar{
     height: 15vw;
     border-bottom-left-radius: 20px;
@@ -656,3 +663,4 @@ body{
     margin-left: 87vh;
   }
 }
+*/
