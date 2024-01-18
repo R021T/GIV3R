@@ -353,7 +353,7 @@ body{
   left: 43%;
 }
 
-@media screen and (width<750px) and (orientation:portrait){
+@media screen and (orientation:portrait){
   .navbar{
     height: 15vh;
     border-bottom-left-radius: 20px;
@@ -527,14 +527,16 @@ body{
   }
 
   .is{
-    font-size: 7vw;
+    font-size: 3.5vh;
     margin-top: 4vh;
     margin-left: 2vw;
   }
 
   .desc{
-    font-size: 2.5vw;
-    margin-left: 2vw;
+    font-size: 1.25vh;
+    margin-left: 3.5vw;
+    margin-top: 3.5vh;
+    padding: 0;
   }
 }
 
