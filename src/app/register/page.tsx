@@ -12,14 +12,14 @@ export default function Register() {
       </div>
       <div className={styles.content}>
         <div className={styles.left}>
-          <div className={styles.card}>
+          <button className={styles.card}>
             <div className={styles.top}>
               <Image className={styles.image} src={"/ngo.png"} width={500} height={500} alt="NGO"/>
             </div>
             <div className={styles.bottom}>
               <p className={styles.text}>Are you a NGO?</p>
             </div>
-          </div>
+          </button>
         </div>
         <div className={styles.mid}>
           <div className={styles.high}>
@@ -32,14 +32,14 @@ export default function Register() {
           </div>
         </div>
         <div className={styles.right}>
-          <div className={styles.card}>
+          <button className={styles.card}>
             <div className={styles.top}>
                 <Image className={styles.image} src={"/donor.png"} width={500} height={500} alt="Donor"/>
               </div>
               <div className={styles.bottom}>
                 <p className={styles.text}>Are you a Donor?</p>
               </div>
-          </div>
+          </button>
         </div>
       </div>
     </>

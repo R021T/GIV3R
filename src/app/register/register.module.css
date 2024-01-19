@@ -108,6 +108,11 @@
     border-radius: 20px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     margin-top: 25%;
+    border: 0;
+}
+
+.card:hover{
+    cursor: pointer;
 }
 
 .top{
@@ -198,6 +203,10 @@
 
     .log{
         font-size: 0.75rem;
+    }
+
+    .card{
+        border-radius: 10px;
     }
 
     .top{

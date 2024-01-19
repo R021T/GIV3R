@@ -1,7 +1,7 @@
 import styles from "./login.module.css"
 import Image from "next/image"
 
-export default function Register() {
+export default function Login() {
   return (
     <main>
       <title>GIV3R丨Login</title>
