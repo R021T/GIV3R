@@ -16,7 +16,7 @@
 
 .heading{
     position: absolute;
-    margin-left: 44%;
+    margin-left: 45%;
     font-size: 2.5rem;
     font-weight: lighter;
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -30,6 +30,23 @@
 }
 
 .left{
+    display: flex;
+    justify-content:end;
+    align-items: center; 
+    float: left;
+    width: 33.33%;
+    height: 100%;
+}
+
+.mid{
+    float: left;
+    width: 33.33%;
+    height: 100%;
+}
+
+.right{
+    display: flex;
+    align-items: center;
     float: left;
     width: 33.33%;
     height: 100%;
@@ -81,21 +98,6 @@
 
 .in{
     color: #2774bc;
-}
-
-.right{
-    float: left;
-    width: 66.66%;
-    height: 100%;
-}
-
-.column{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    float: left;
-    width: 50%;
-    height: 100%;
 }
 
 .card{
