@@ -30,7 +30,7 @@ export default function Login() {
             </div>
           </div>
           <div className={styles.low}>
-            <p className={styles.log}>Don't have an account?<br/><Link className={styles.link} href={"/register"}><b className={styles.in}>Register</b></Link></p>
+            <p className={styles.log}>Don&apos;t have an account?<br/><Link className={styles.link} href={"/register"}><b className={styles.in}>Register</b></Link></p>
           </div>
         </div>
         <div className={styles.right}>
