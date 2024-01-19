@@ -26,7 +26,7 @@ export default function Register() {
         <div className={styles.mid}>
           <div className={styles.high}>
             <div className={styles.circle}>
-              <Image className={styles.logo} src={"/title.png"} width={500} height={250} alt="GIV3R"/>
+              <Image className={styles.logo} priority={true} src={"/logo.png"} width={500} height={250} alt="GIV3R"/>
             </div>
           </div>
           <div className={styles.low}>
@@ -36,7 +36,7 @@ export default function Register() {
         <div className={styles.right}>
           <button className={styles.card}>
             <Link className={styles.link} href={"/register/donor"}>
-              <div className={styles.top}>
+                <div className={styles.top}>
                   <Image className={styles.image} src={"/donor.png"} width={500} height={500} alt="Donor"/>
                 </div>
                 <div className={styles.bottom}>
