@@ -1,8 +1,14 @@
 import styles from "./donor.module.css"
 import Image from "next/image"
 import Form from "./form"
+import { getServerSession } from "next-auth"
+import { redirect } from "next/navigation"
 
 export default async function Register() {
+    const session=await getServerSession()
+    if(session){
+        redirect("/profile")
+    }
     return (
         <>
             <title>GIV3R丨Register</title>

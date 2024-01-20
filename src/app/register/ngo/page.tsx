@@ -7,7 +7,7 @@ import { redirect } from "next/navigation"
 export default async function Register() {
     const session=await getServerSession()
     if(session){
-        redirect("/Profile")
+        redirect("/profile")
     }
     return (
         <>
