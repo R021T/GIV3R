@@ -3,6 +3,7 @@ import Form from "./form"
 import styles from "./login.module.css"
 import Image from "next/image"
 import { redirect } from "next/navigation"
+import Link from "next/link"
 
 export default async function Login() {
     const session=await getServerSession()
@@ -21,7 +22,12 @@ export default async function Login() {
                 </div>
                 <div className={styles.right}>
                     <div className={styles.top}>
-                        <h1 className={styles.title}>Enter your credentials</h1>
+                        <div className={styles.login}>
+                            <h1 className={styles.title}>Login</h1>
+                        </div>
+                        <div className={styles.register}>
+                            <p className={styles.subtitle}>Don&apos;t have an account? <b><Link className={styles.link} href={"/register"}>Register</Link></b></p>
+                        </div>
                     </div>
                     <div className={styles.bottom}>
                         <div className={styles.details}>
