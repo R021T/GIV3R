@@ -1,20 +1,44 @@
 import NextAuth from "next-auth/next"
 import CredentialsProvider from "next-auth/providers/credentials"
+import { compare } from "bcrypt"
+import { sql } from "@vercel/postgres"
 
 const handler = NextAuth({
+    session:{
+        strategy: "jwt"
+    },
     providers: [CredentialsProvider({
         credentials: {
+            category: {},
             username: {},
             password: {}
           },
           async authorize (credentials, req) {
-            const user={id: "1", name: "J Smith", email: "jsmith@example.com"}
-            if (user) {
-                return user
+            if(credentials?.category==="NGO"){
+                const response=await sql`select * from ngo where username=${credentials?.username}`
+                const ngo=response.rows[0]
+                const passwordCheck=await compare(credentials?.password || "",ngo.password)
+                console.log({passwordCheck})
+                if(passwordCheck){
+                    return{
+                        id: ngo.id,
+                        name: ngo.name
+                    }
+                }
             }
-            else {
-                return null
+            else if(credentials?.category==="Donor"){
+                const response=await sql`select * from donor where username=${credentials?.username}`
+                const ngo=response.rows[0]
+                const passwordCheck=await compare(credentials?.password || "",ngo.password)
+                console.log({passwordCheck})
+                if(passwordCheck){
+                    return{
+                        id: ngo.id,
+                        name: ngo.name
+                    }
+                }
             }
+            return null
           }
     })]
 })
