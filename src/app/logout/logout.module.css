@@ -47,6 +47,11 @@
     border-radius: 10px;
 }
 
+.logout:hover{
+    cursor: pointer;
+    background: #6cace4;
+}
+
 @media screen and (orientation:portrait){
     .circle{
         width: 12.5rem;

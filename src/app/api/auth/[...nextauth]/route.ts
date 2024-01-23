@@ -28,13 +28,13 @@ const handler = NextAuth({
             }
             else if(credentials?.category==="Donor"){
                 const response=await sql`select * from donor where username=${credentials?.username}`
-                const ngo=response.rows[0]
-                const passwordCheck=await compare(credentials?.password || "",ngo.password)
+                const donor=response.rows[0]
+                const passwordCheck=await compare(credentials?.password || "",donor.password)
                 console.log({passwordCheck})
                 if(passwordCheck){
                     return{
-                        id: ngo.id,
-                        name: ngo.name
+                        id: donor.id,
+                        name: donor.name
                     }
                 }
             }

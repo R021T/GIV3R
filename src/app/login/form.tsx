@@ -26,8 +26,8 @@ export default function Form() {
         <form className={styles.enter} onSubmit={handleSubmit}>
             <div className={styles.category}>
                 <label>Category :</label>
-                <select name="category" defaultValue={"default"}>
-                    <option value={"default"} disabled>Select category</option>
+                <select name="category" defaultValue={""} required>
+                    <option value={""} disabled>Select category</option>
                     <option>NGO</option>
                     <option>Donor</option>
                 </select>
