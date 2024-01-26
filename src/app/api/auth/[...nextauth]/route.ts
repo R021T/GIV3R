@@ -21,7 +21,8 @@ const handler = NextAuth({
                 if(passwordCheck){
                     return{
                         id: ngo.id,
-                        name: ngo.username
+                        name: ngo.username,
+                        email: "N"
                     }
                 }
             }
@@ -32,7 +33,8 @@ const handler = NextAuth({
                 if(passwordCheck){
                     return{
                         id: donor.id,
-                        name: donor.username
+                        name: donor.username,
+                        email: "D"
                     }
                 }
             }
