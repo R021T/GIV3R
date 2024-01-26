@@ -18,11 +18,10 @@ const handler = NextAuth({
                 const response=await sql`select * from ngo where username=${credentials?.username}`
                 const ngo=response.rows[0]
                 const passwordCheck=await compare(credentials?.password || "",ngo.password)
-                console.log({passwordCheck})
                 if(passwordCheck){
                     return{
                         id: ngo.id,
-                        name: ngo.name
+                        name: ngo.username
                     }
                 }
             }
@@ -30,11 +29,10 @@ const handler = NextAuth({
                 const response=await sql`select * from donor where username=${credentials?.username}`
                 const donor=response.rows[0]
                 const passwordCheck=await compare(credentials?.password || "",donor.password)
-                console.log({passwordCheck})
                 if(passwordCheck){
                     return{
                         id: donor.id,
-                        name: donor.name
+                        name: donor.username
                     }
                 }
             }

@@ -17,8 +17,14 @@ export default function Form() {
         })
         console.log({response})
         if(!response?.error){
-            router.push("/profile")
-            router.refresh()
+            if(formData.get("category")==="NGO"){
+                router.push("/profile/ngo")
+                router.refresh()
+            }
+            else if(formData.get("category")==="Donor"){
+                router.push("/profile/donor")
+                router.refresh()
+            }
         }
     }
 
