@@ -15,16 +15,9 @@ export default function Form() {
             password: formData.get("password"),
             redirect: false
         })
-        console.log({response})
         if(!response?.error){
-            if(formData.get("category")==="NGO"){
-                router.push("/profile/ngo")
-                router.refresh()
-            }
-            else if(formData.get("category")==="Donor"){
-                router.push("/profile/donor")
-                router.refresh()
-            }
+            router.push("/profile")
+            router.refresh()
         }
     }
 
