@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import styles from "./ngo.module.css"
+import styles from "./campaign.module.css"
 import Image from "next/image"
 import Link from 'next/link'
 import { signOut } from 'next-auth/react'
@@ -12,7 +12,7 @@ interface ApiResponse {
   }
 }
 
-export default function Profile() {
+export default function Campaigns() {
   const [data, setData] = useState<ApiResponse | null>(null)
   const [isLoading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -85,8 +85,8 @@ export default function Profile() {
           </div>
           <div className={styles.two}>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}`}>
-                <button className={styles.active}>Dashboard</button>
+              <Link className={styles.link} href={`/profile/ngo/${data.data.username}/dashboard`}>
+                <button className={styles.button}>Dashboard</button>
               </Link>
             </div>
             <div className={styles.select}>
@@ -95,8 +95,8 @@ export default function Profile() {
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}`}>
-                <button className={styles.button}>Campaigns</button>
+              <Link className={styles.link} href={`/profile/ngo/${data.data.username}/campaigns`}>
+                <button className={styles.active}>Campaigns</button>
               </Link>
             </div>
             <div className={styles.select}>
@@ -109,43 +109,20 @@ export default function Profile() {
             <button className={styles.logout} onClick={()=>{signOut()}}>Logout</button>
           </div>
         </div>
-        <div className={styles.dashboard}>
-          <div className={styles.info}>
-            <div className={styles.left}>
-              <div className={styles.top}>
-                <div className={styles.details}>
-                  <div className={styles.high}>
-                    <div className={styles.lt}>
-                      <Image className={styles.dp} priority={true} src={"/profile.png"} width={175} height={175} alt="Profile"/>
-                    </div>
-                    <div className={styles.rt}>
-                      <h1 className={styles.name}>{data.data.name}</h1>
-                    </div>
-                  </div>
-                  <div className={styles.low}>
-                    <p>Wallet details:</p>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.bottom}>
-                <div className={styles.west}>
-                  <div className={styles.volunteers}>
-                    <p>Number of volunteers:</p>
-                  </div>
-                </div>
-                <div className={styles.east}>
-                  <div className={styles.campaigns}>
-                    <p>Number of campaigns:</p>
-                  </div>
-                </div>
-              </div>
+        <div className={styles.campaign}>
+            <div className={styles.top}>
+                <h1 className={styles.title}>Active Campaigns</h1>
             </div>
-            <div className={styles.right}>
-              <div className={styles.recent}>
-                <p>Recent donations:</p>
-              </div>
+            <div className={styles.bottom}>
+                <div className={styles.list}>
+                    <div className={styles.high}></div>
+                    <div className={styles.low}>
+                        <Link className={styles.redirect} href={`/profile/ngo/${data.data.username}/campaigns/create`}>
+                            <button className={styles.create}>Create</button>
+                        </Link>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
       </div>
     </>

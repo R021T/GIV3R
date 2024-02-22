@@ -6,7 +6,7 @@ export default async function donorProfile() {
     const session=await getServerSession()
     if(session){
         if(session.user?.email==="N"){
-            redirect(`/profile/ngo/${session.user.name}`)
+            redirect(`/profile/ngo/${session.user.name}/dashbaord`)
         }
     }
     else{

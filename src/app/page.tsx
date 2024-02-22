@@ -15,7 +15,7 @@ export default function Home() {
           <Link href="#WeAreGIV3R">
             <button className="about">ABOUT</button>
           </Link>
-          <button className="events">EVENTS</button>
+          <button className="campaigns">CAMPAIGNS</button>
           <Image className="title" priority={true} src={"/logo.png"} width={600} height={300} alt="GIV3R"/>
           <button className="volunteer">VOLUNTEER</button>
           <button className="contact">CONTACT</button>

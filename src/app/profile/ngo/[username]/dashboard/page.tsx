@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
-import Profile from "./profile"
+import Dashboard from "./dashboard"
 
 export default async function ngoProfile() {
     const session=await getServerSession()
@@ -15,7 +15,7 @@ export default async function ngoProfile() {
     return(
         <>
             <title>GIV3R丨Profile</title>
-            <Profile/>
+            <Dashboard/>
         </>
   )
 }
