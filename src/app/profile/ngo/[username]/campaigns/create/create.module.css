@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+.canvas{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.left{
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+}
+
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.down{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 30%;
+}
+
+.text{
+    font-size: 3rem;
+    font-weight: lighter;
+}
+
+.right{
+    width: 70%;
+    height: 100%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background: white;
+    float: left;
+}
+
+.form{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.one{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    font-size: 1.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.one label{
+    margin-left: 15%;
+}
+
+.one input{
+    margin-left: 5%;
+    width: 30%;
+    height: 40%;
+    border-radius: 10px;
+    border: 0;
+    background: rgb(108 172 228 / 0.25);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.two{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 30%;
+    font-size: 1.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.two label{
+    margin-left: 15%;
+}
+
+.two textarea{
+    resize: none;
+    margin-left: 5%;
+    width: 60%;
+    height: 80%;
+    border-radius: 10px;
+    border: 0;
+    background: rgb(108 172 228 / 0.25);
+    font-size: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-align: center;
+}
+
+.three{
+    width: 100%;
+    height: 20%;
+}
+
+.west{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    float: left;
+    font-size: 1.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.west label{
+    margin-left: 15%;
+}
+
+.west input{
+    margin-left: 5%;
+    width: 40%;
+    height: 40%;
+    border-radius: 10px;
+    border: 0;
+    background: rgb(108 172 228 / 0.25);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.east{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    float: left;
+    font-size: 1.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.east label{
+    margin-left: 10%;
+}
+
+.east input{
+    margin-left: 5%;
+    width: 25%;
+    height: 40%;
+    border-radius: 10px;
+    border: 0;
+    background: rgb(108 172 228 / 0.25);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.four{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}
+
+.four input{
+    width: 12.5%;
+    height: 20%;
+    margin-left: 50%;
+    border-radius: 10px;
+    border: 0;
+    background: #2774bc;
+    color: white;
+}
+
+.four input:hover{
+    cursor: pointer;
+    background: #6cace4;
+}

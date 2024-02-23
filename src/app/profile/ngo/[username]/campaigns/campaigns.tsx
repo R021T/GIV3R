@@ -7,6 +7,7 @@ import { signOut } from 'next-auth/react'
 
 interface ApiResponse {
   data: {
+    map(arg0: (campaign: any, index: number) => React.JSX.Element): React.ReactNode
     name: string,
     username: string
   }
@@ -18,7 +19,7 @@ export default function Campaigns() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch("/api/profile/ngo")
+    fetch("/api/profile/ngo/campaigns")
       .then((res) => res.json())
       .then((apiData: ApiResponse) => {
         setData(apiData)
@@ -115,12 +116,38 @@ export default function Campaigns() {
             </div>
             <div className={styles.bottom}>
                 <div className={styles.list}>
-                    <div className={styles.high}></div>
-                    <div className={styles.low}>
-                        <Link className={styles.redirect} href={`/profile/ngo/${data.data.username}/campaigns/create`}>
-                            <button className={styles.create}>Create</button>
-                        </Link>
-                    </div>
+                  <div className={styles.high}>
+                    <table className={styles.table}>
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Description</th>
+                          <th>Amount</th>
+                          <th>Volunteers</th>
+                          <th>Raised</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {data.data.map((campaign: any, index: number) => (
+                          <tr key={index}>
+                            <td>{campaign.id}</td>
+                            <td>{campaign.name}</td>
+                            <td>{campaign.description}</td>
+                            <td>{campaign.amount}</td>
+                            <td>{campaign.volunteers}</td>
+                            <td>{campaign.raised}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className={styles.low}>
+                      <Link className={styles.redirect} href={`/profile/ngo/${data.data.username}/campaigns/create`}>
+                          <button className={styles.create}>Create</button>
+                      </Link>
+                  </div>
                 </div>
             </div>
         </div>

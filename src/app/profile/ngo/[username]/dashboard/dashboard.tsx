@@ -8,7 +8,8 @@ import { signOut } from 'next-auth/react'
 interface ApiResponse {
   data: {
     name: string,
-    username: string
+    username: string,
+    campaigns: number
   }
 }
 
@@ -18,7 +19,7 @@ export default function Dashboard() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch("/api/profile/ngo")
+    fetch("/api/profile/ngo/dashboard")
       .then((res) => res.json())
       .then((apiData: ApiResponse) => {
         setData(apiData)
@@ -135,7 +136,7 @@ export default function Dashboard() {
                 </div>
                 <div className={styles.east}>
                   <div className={styles.campaigns}>
-                    <p>Number of campaigns:</p>
+                    <p>Number of campaigns: {data.data.campaigns}</p>
                   </div>
                 </div>
               </div>
