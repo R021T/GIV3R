@@ -258,3 +258,124 @@
     border-radius: 20px;
     float: left;
 }
+
+@media screen and (orientation:portrait){
+    .bar{
+        width: 100%;
+        height: 15%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        float: none;
+    }
+
+    .one{
+        width: 25%;
+        height: 100%;
+        float: left;
+    }
+
+    .logo{
+        margin-left: 30%;
+        width: 10rem;
+        height: 5rem;
+    }
+
+    .two{
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+
+    .link{
+        width: 60%;
+        height: 90%;
+    }
+
+    .active{
+        border-radius: 5px;
+        font-size: small;
+    }
+
+    .button{
+        border-radius: 5px;
+        font-size: small;
+    }
+
+    .three{
+        width: 25%;
+        height: 100%;
+        float: left;
+    }
+
+    .logout{
+        width: 70%;
+        border-radius: 5px;
+    }
+
+    .dashboard{
+        width: 100%;
+        height: 85%;
+        float: none;
+    }
+
+    .info{
+        height: 90%;
+    }
+
+    .left{
+        width: 100%;
+        height: 70%;
+    }
+
+    .details{
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .high{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .lt{
+        width: 40%;
+    }
+
+    .dp{
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .rt{
+        width: 60%;
+    }
+
+    .volunteers{
+        width: 90%;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .east{
+        justify-content: flex-end;
+    }
+
+    .campaigns{
+        width: 90%;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .right{
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        height: 30%;
+    }
+
+    .recent{
+        width: 100%;
+        height: 85%;
+        border-radius: 10px;
+    }
+}
