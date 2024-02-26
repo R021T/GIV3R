@@ -35,12 +35,20 @@ export default function Form() {
             </div>
             <div className={styles.three}>
                 <div className={styles.west}>
-                    <label>Amount required:</label>
-                    <input name="amount" type="number" placeholder="No constraints" required></input>
+                    <div className={styles.north}>
+                        <label>Amount required:</label>
+                    </div>
+                    <div className={styles.south}>
+                        <input name="amount" type="number" placeholder="No constraints" required></input>
+                    </div>
                 </div>
                 <div className={styles.east}>
-                    <label>Volunteers required:</label>
-                    <input name="volunteers" type="number" placeholder="No constraints" required></input>
+                    <div className={styles.north}>
+                        <label>Volunteers required:</label>
+                    </div>
+                    <div className={styles.south}>
+                        <input name="volunteers" type="number" placeholder="No constraints" required></input>
+                    </div>
                 </div>
             </div>
             <div className={styles.four}>

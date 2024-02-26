@@ -25,7 +25,7 @@ export default async function createCampaign() {
                         </div>
                     </div>
                     <div className={styles.down}>
-                        <h1 className={styles.text}>Campaign</h1>
+                        <h1 className={styles.text}><b>C</b>reate <b>C</b>ampaign</h1>
                     </div>
                 </div>
                 <div className={styles.right}>
