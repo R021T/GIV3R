@@ -124,8 +124,8 @@ export default function Approvals() {
             <div className={styles.bottom}>
             <div className={styles.flex}>
                 {data.data.map((needy: any,index: number) => (
-                    <div className={styles.pending}>
-                        <div className={styles.list} key={index}>
+                    <div key={index} className={styles.pending}>
+                        <div className={styles.list}>
                             <div className={styles.request}>
                                 <p>{needy.firstname} {needy.middlename} {needy.lastname} has requested for approval</p>
                             </div>
