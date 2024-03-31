@@ -106,7 +106,7 @@ export default function Campaigns() {
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`profile/ngo/${data.data.username}/approvals`}>
+              <Link className={styles.link} href={`/profile/ngo/${data.data.username}/approvals`}>
                 <button className={styles.button}>Approvals</button>
               </Link>
             </div>
