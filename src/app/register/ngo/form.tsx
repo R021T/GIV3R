@@ -15,6 +15,7 @@ export default function Form() {
                 email: formData.get("email"),
                 phone: formData.get("phone"),
                 username: formData.get("username"),
+                wallet: formData.get("wallet"),
                 password: formData.get("password")
             })
         })
@@ -37,6 +38,10 @@ export default function Form() {
             <div className={styles.phone}>
                 <label>Phone :</label>
                 <input name="phone" type="tel" pattern="[0-9]{10}" placeholder="10 digits" required/>
+            </div>
+            <div className={styles.wallet}>
+                <label>Wallet ID:</label>
+                <input name="wallet" type="text" placeholder="Not compulsory"/>
             </div>
             <div className={styles.username}>
                 <label>Username :</label>
