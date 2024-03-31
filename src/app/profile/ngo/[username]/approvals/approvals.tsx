@@ -1,25 +1,27 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import styles from "./dashboard.module.css"
+import styles from "./approvals.module.css"
 import Image from "next/image"
 import Link from 'next/link'
 import { signOut } from 'next-auth/react'
 
 interface ApiResponse {
   data: {
-    name: string,
+    map(arg0: (needy: any,index: number) => React.JSX.Element): React.ReactNode
     username: string,
-    campaigns: number
+    firstname: string,
+    middlename: string,
+    lastname: string
   }
 }
 
-export default function Dashboard() {
+export default function Approvals() {
   const [data, setData] = useState<ApiResponse | null>(null)
   const [isLoading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch("/api/profile/ngo/dashboard")
+    fetch("/api/profile/ngo/approvals")
       .then((res) => res.json())
       .then((apiData: ApiResponse) => {
         setData(apiData)
@@ -87,7 +89,7 @@ export default function Dashboard() {
           <div className={styles.two}>
             <div className={styles.select}>
               <Link className={styles.link} href={`/profile/ngo/${data.data.username}/dashboard`}>
-                <button className={styles.active}>Dashboard</button>
+                <button className={styles.button}>Dashboard</button>
               </Link>
             </div>
             <div className={styles.select}>
@@ -106,8 +108,8 @@ export default function Dashboard() {
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}/approvals`}>
-                <button className={styles.button}>Approvals</button>
+              <Link className={styles.link} href={`profile/ngo/${data.data.username}/approvals`}>
+                <button className={styles.active}>Approvals</button>
               </Link>
             </div>
           </div>
@@ -115,43 +117,30 @@ export default function Dashboard() {
             <button className={styles.logout} onClick={()=>{signOut()}}>Logout</button>
           </div>
         </div>
-        <div className={styles.dashboard}>
-          <div className={styles.info}>
-            <div className={styles.left}>
-              <div className={styles.top}>
-                <div className={styles.details}>
-                  <div className={styles.high}>
-                    <div className={styles.lt}>
-                      <Image className={styles.dp} priority={true} src={"/profile.png"} width={175} height={175} alt="Profile"/>
-                    </div>
-                    <div className={styles.rt}>
-                      <h1 className={styles.name}>{data.data.name}</h1>
-                    </div>
-                  </div>
-                  <div className={styles.low}>
-                    <p>Wallet details:</p>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.bottom}>
-                <div className={styles.west}>
-                  <div className={styles.volunteers}>
-                    <p>Number of volunteers:</p>
-                  </div>
-                </div>
-                <div className={styles.east}>
-                  <div className={styles.campaigns}>
-                    <p>Number of campaigns: {data.data.campaigns}</p>
-                  </div>
-                </div>
-              </div>
+        <div className={styles.approvals}>
+            <div className={styles.top}>
+                <h1 className={styles.title}>Pending Approvals</h1>
             </div>
-            <div className={styles.right}>
-              <div className={styles.recent}>
-                <p>Recent donations:</p>
-              </div>
+            <div className={styles.bottom}>
+            <div className={styles.flex}>
+                {data.data.map((needy: any,index: number) => (
+                    <div className={styles.pending}>
+                        <div className={styles.list} key={index}>
+                            <div className={styles.request}>
+                                <p>{needy.firstname} {needy.middlename} {needy.lastname} has requested for approval</p>
+                            </div>
+                            <div className={styles.approval}>
+                                <button className={styles.approve}>Approve</button>
+                            </div>
+                            <div className={styles.denial}>
+                                <button className={styles.deny}>Deny</button>
+                            </div>
+                        </div>
+                        <div className={styles.space}></div>
+                    </div>
+                ))}
             </div>
-          </div>
+            </div>
         </div>
       </div>
     </>

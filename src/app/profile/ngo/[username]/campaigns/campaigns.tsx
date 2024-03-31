@@ -105,6 +105,11 @@ export default function Campaigns() {
                 <button className={styles.button}>Volunteers</button>
               </Link>
             </div>
+            <div className={styles.select}>
+              <Link className={styles.link} href={`profile/ngo/${data.data.username}/approvals`}>
+                <button className={styles.button}>Approvals</button>
+              </Link>
+            </div>
           </div>
           <div className={styles.three}>
             <button className={styles.logout} onClick={()=>{signOut()}}>Logout</button>
