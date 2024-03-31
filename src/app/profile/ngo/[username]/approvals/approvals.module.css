@@ -298,70 +298,37 @@
         border-radius: 5px;
     }
 
-    .dashboard{
+    .approvals{
         width: 100%;
-        height: 80%;
-        float: none;
     }
 
-    .info{
-        height: 90%;
+    .top{
+        height: 15%;
     }
 
-    .left{
-        width: 100%;
-        height: 70%;
+    .title{
+        font-size: x-large;
     }
 
-    .details{
-        width: 100%;
-        border-radius: 10px;
+    .bottom{
+        align-items: flex-start;
     }
 
-    .high{
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+    .pending{
+        height: 12.5%;
     }
 
-    .lt{
-        width: 40%;
+    .request{
+        font-size: x-small;
     }
 
-    .dp{
-        width: 7rem;
-        height: 7rem;
-    }
-
-    .rt{
-        width: 60%;
-    }
-
-    .volunteers{
+    .approve{
         width: 90%;
-        border-radius: 10px;
-        text-align: center;
+        height: 50%;
     }
 
-    .east{
-        justify-content: flex-end;
-    }
-
-    .campaigns{
+    .deny{
         width: 90%;
-        border-radius: 10px;
-        text-align: center;
-    }
-
-    .right{
-        justify-content: center;
-        align-items: flex-end;
-        width: 100%;
-        height: 30%;
-    }
-
-    .recent{
-        width: 100%;
-        height: 85%;
-        border-radius: 10px;
+        height: 50%;
     }
 }
