@@ -28,7 +28,9 @@ export default function Form() {
                 <select name="category" defaultValue={""} required>
                     <option value={""} disabled>Select category</option>
                     <option>NGO</option>
+                    <option>Service Provider</option>
                     <option>Donor</option>
+                    <option>Beneficiary</option>
                 </select>
             </div>
             <div className={styles.username}>
