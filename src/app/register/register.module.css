@@ -1,38 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+.canvas{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
 
 .header{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 10rem;
-}
-
-.bar{
-    width: 100%;
-    height: 60%;
-    background: #6cace4;
-    filter: opacity(25%);
+    height: 20%;
 }
 
 .heading{
-    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    background: rgb(108 172 228 / 0.25);
     font-size: 2.5rem;
     font-weight: lighter;
     font-family: 'Plus Jakarta Sans', sans-serif;
+    text-align: center;
 }
 
 .content{
-    position: absolute;
-    top: 0;
     width: 100%;
-    height: 100vh;
+    height: 80%;
 }
 
 .left{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center; 
     float: left;
     width: 33.33%;
     height: 100%;
@@ -45,9 +44,6 @@
 }
 
 .right{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     float: left;
     width: 33.33%;
     height: 100%;
@@ -62,7 +58,6 @@
 }
 
 .circle{
-    position: absolute;
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -71,7 +66,6 @@
     height: 12rem;
     background: white;
     border-radius: 50%;
-    margin-top: 20%;
 }
 
 .logo{
@@ -102,13 +96,44 @@
     color: #2774bc;
 }
 
+.ngo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 50%;
+}
+
+.services{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 50%;
+}
+
+.donor{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 50%;
+}
+
+.needy{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 50%;
+}
+
 .card{
-    width: 80%;
-    height: 60%;
+    width: 90%;
+    height: 80%;
     background: white;
     border-radius: 20px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    margin-top: 25%;
     border: 0;
 }
 
@@ -120,16 +145,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 80%;
+    width: 50%;
+    height: 100%;
+    float: left;
 }
 
 .bottom{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    height: 20%;
+    width: 50%;
+    height: 100%;
+    float: left;
 }
 
 .image{
@@ -143,40 +170,40 @@
 
 @media screen and (orientation:portrait){
     .header{
-        height: 5rem;
+        height: 15%;
     }
-
+    
     .heading{
+        height: 50%;
         font-size: 5vw;
     }
 
+    .content{
+        height: 90%;
+    }
+
     .left{
-        margin-top: 20vh;
-        justify-content: center;
         float: none;
         width: 100%;
-        height: 33.33%;
+        height: 20%;
     }
 
     .mid{
-        margin-top: -50vh;
         float: none;
         width: 100%;
-        height: 33.33%;
+        height: 40%;
     }
 
     .right{
-        margin-top: 10vh;
-        justify-content: center;
         float: none;
         width: 100%;
-        height: 33.33%;
+        height: 40%;
     }
 
     .high{
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         width: 50%;
         height: 100%;
         float: left;
@@ -185,7 +212,7 @@
     .low{
         display: flex;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
         width: 50%;
         height: 100%;
         float: left;
@@ -203,24 +230,57 @@
     }
 
     .log{
+        margin-top: 25%;
         font-size: 0.75rem;
     }
 
+    .ngo{
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+
+    .services{
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+
+    .donor{
+        justify-content: center;
+        align-items: flex-start;
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+
+    .needy{
+        justify-content: center;
+        align-items: flex-start;
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+
     .card{
+        width: 80%;
+        height: 70%;
         border-radius: 10px;
     }
 
     .top{
-        width: 50%;
-        height: 100%;
-        float: left;
+        width: 100%;
+        height: 50%;
     }
 
     .bottom{
-        justify-content: flex-start;
-        width: 50%;
-        height: 100%;
-        float: left;
+        justify-content: center;
+        width: 100%;
+        height: 50%;
     }
 
     .text{
