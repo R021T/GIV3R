@@ -15,7 +15,7 @@ interface ApiResponse {
   }
 }
 
-export default function Approvals() {
+export default function Approvals({ session }: { session: string }) {
   const [data, setData] = useState<ApiResponse | null>(null)
   const [isLoading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -88,27 +88,27 @@ export default function Approvals() {
           </div>
           <div className={styles.two}>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}/dashboard`}>
+              <Link className={styles.link} href={`/profile/ngo/${session}/dashboard`}>
                 <button className={styles.button}>Dashboard</button>
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}`}>
+              <Link className={styles.link} href={`/profile/ngo/${session}`}>
                 <button className={styles.button}>Donations</button>
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}/campaigns`}>
+              <Link className={styles.link} href={`/profile/ngo/${session}/campaigns`}>
                 <button className={styles.button}>Campaigns</button>
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}`}>
+              <Link className={styles.link} href={`/profile/ngo/${session}`}>
                 <button className={styles.button}>Volunteers</button>
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`profile/ngo/${data.data.username}/approvals`}>
+              <Link className={styles.link} href={`profile/ngo/${session}/approvals`}>
                 <button className={styles.active}>Approvals</button>
               </Link>
             </div>

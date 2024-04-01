@@ -15,7 +15,7 @@ export default async function Campaign() {
     return(
         <>
             <title>GIV3R丨Profile</title>
-            <Campaigns/>
+            <Campaigns session={session.user?.name || ''}/>
         </>
   )
 }

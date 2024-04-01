@@ -15,7 +15,7 @@ export default async function ngoProfile() {
     return(
         <>
             <title>GIV3R丨Profile</title>
-            <Approvals/>
+            <Approvals session={session.user?.name || ''}/>
         </>
   )
 }
