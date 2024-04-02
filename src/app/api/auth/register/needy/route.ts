@@ -10,10 +10,10 @@ export async function GET(){
 
 export async function POST(request:Request) {
     try{
-        const{ngo,firstname,middlename,lastname,age,email,phone,wallet,username,password}=await request.json()
+        const{ngo,firstname,middlename,lastname,age,email,phone,country,state,district,city,pin,wallet,username,password}=await request.json()
         const ngos=ngo.map((str: string) => parseInt(str, 10))
         const hashedPassword=await hash(password,10)
-        const response=await sql`insert into needy(ngo,firstname,middlename,lastname,age,email,phone,wallet,username,password) values(${ngos},${firstname},${middlename},${lastname},${age},${email},${phone},${wallet},${username},${hashedPassword}) returning id,ngo,firstname,middlename,lastname`
+        const response=await sql`insert into needy(ngo,firstname,middlename,lastname,age,email,phone,country,state,district,city,pin,wallet,username,password) values(${ngos},${firstname},${middlename},${lastname},${age},${email},${phone},${country},${state},${district},${city},${pin},${wallet},${username},${hashedPassword}) returning id,ngo,firstname,middlename,lastname`
         if(response){
             const ngo_id=response.rows[0].ngo
             const needy_id=response.rows[0].id

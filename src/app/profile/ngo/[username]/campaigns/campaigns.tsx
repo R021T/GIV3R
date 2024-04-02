@@ -86,7 +86,7 @@ export default function Campaigns({ session }: { session: string }) {
           </div>
           <div className={styles.two}>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${session}}/dashboard`}>
+              <Link className={styles.link} href={`/profile/ngo/${session}/dashboard`}>
                 <button className={styles.button}>Dashboard</button>
               </Link>
             </div>
