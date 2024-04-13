@@ -143,7 +143,7 @@
     text-align: center;
 }
 
-.firstname,.middlename,.lastname,.age,.email,.phone,.country,.state,.district,.city,.pin,.username,.password{
+.firstname,.middlename,.lastname,.service,.email,.phone,.country,.state,.district,.city,.pin,.wallet,.username,.password{
     width: 95%;
     height: 20%;
     font-size: 1.5rem;
@@ -152,7 +152,7 @@
     border-radius: 15px;
 }
 
-.firstname input,.middlename input,.lastname input,.age input,.email input,.phone input,.country input,.state input,.district input,.city input,.pin input,.username input,.password input{
+.firstname input,.middlename input,.lastname input,.service input,.email input,.phone input,.country input,.state input,.district input,.city input,.pin input,.username input,.password input{
     width: 70%;
     height: 60%;
     border-radius: 10px;
@@ -295,7 +295,7 @@
         border-radius: 10px;
     }
 
-    .ngo,.firstname,.middlename,.lastname,.age,.email,.phone,.country,.state,.district,.city,.pin,.wallet,.username,.password{
+    .ngo,.firstname,.middlename,.lastname,.service,.email,.phone,.country,.state,.district,.city,.pin,.wallet,.username,.password{
         font-size: 0.75rem;
     }
 

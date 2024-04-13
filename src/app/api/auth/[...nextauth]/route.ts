@@ -38,6 +38,30 @@ const handler = NextAuth({
                     }
                 }
             }
+            else if(credentials?.category==="Beneficiary"){
+                const response=await sql`select * from needy where username=${credentials.username}`
+                const needy=response.rows[0]
+                const passwordCheck=await compare(credentials.password || "",needy.password)
+                if(passwordCheck){
+                    return{
+                        id: needy.id,
+                        name: needy.username,
+                        email: "B"
+                    }
+                }
+            }
+            else if(credentials?.category==="Service Provider"){
+                const response=await sql`select * from service where username=${credentials.username}`
+                const needy=response.rows[0]
+                const passwordCheck=await compare(credentials.password || "",needy.password)
+                if(passwordCheck){
+                    return{
+                        id: needy.id,
+                        name: needy.username,
+                        email: "S"
+                    }
+                }
+            }
             return null
           }
     })]

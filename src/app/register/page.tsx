@@ -42,7 +42,7 @@ export default async function Register() {
             </div>
             <div className={styles.services}>
               <button className={styles.card}>
-                <Link className={styles.link} href={"/register/services"}>
+                <Link className={styles.link} href={"/register/service"}>
                   <div className={styles.top}>
                     <Image className={styles.image} priority={true} src={"/services.png"} width={500} height={500} alt="Services"/>
                   </div>

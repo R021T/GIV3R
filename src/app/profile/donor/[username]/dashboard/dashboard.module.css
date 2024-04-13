@@ -121,7 +121,10 @@
     background: #6cace4;
 }
 
-.approvals{
+.dashboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 85%;
     height: 100%;
     float: left;
@@ -140,111 +143,120 @@
 
 .top{
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 65%;
+}
+
+.details{
+    width: 90%;
+    height: 100%;
+    background: white;
+    border-radius: 20px;
+    float: left;
+}
+
+.high{
+    width: 100%;
+    height: 50%;
+    background: rgb(39 116 188 / 0.75);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.lt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.rt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+.name{
+    color: white;
+}
+
+.low{
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 20%;
-}
-
-.title{
-    font-size: xx-large;
-    font-weight: lighter;
+    height: 50%;
 }
 
 .bottom{
+    width: 100%;
+    height: 35%;
+}
+
+.west{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.volunteers{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: 80%;
-}
-
-.flex{
-    width: 90%;
-    height: 90%;
-}
-
-.pending{
-    width: 100%;
-    height: 17.5%;
-}
-
-.list{
-    width: 100%;
-    height: 90%;
-    border-radius: 10px;
     background: white;
+    border-radius: 20px;
 }
 
-.request{
+.east{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    height: 100%;
-    font-size: larger;
-    text-align: center;
-    float: left;
-}
-
-.approval{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    height: 100%;
-    float: left;
-}
-
-.approve{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-end;
     width: 50%;
-    height: 50%;
-    background: #00b85b;
-    color: white;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    border: 0;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    text-decoration: none;
-    font-size: small;
-}
-
-.approve:hover{
-    cursor: pointer;
-    background: #50c878;
-}
-
-.space{
-    width: 100%;
-    height: 10%;
-}
-
-.denial{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
     height: 100%;
     float: left;
 }
 
-.deny{
-    width: 50%;
-    height: 50%;
-    background: #ff5555;
-    color: white;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    border: 0;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+.campaigns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    background: white;
+    border-radius: 20px;
 }
 
-.deny:hover{
-    cursor: pointer;
-    background: red;
+.right{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+
+.recent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    margin-right: 0;
+    background: white;
+    border-radius: 20px;
+    float: left;
 }
 
 @media screen and (orientation:portrait){
@@ -303,37 +315,70 @@
         border-radius: 5px;
     }
 
-    .approvals{
+    .dashboard{
         width: 100%;
+        height: 80%;
+        float: none;
     }
 
-    .top{
-        height: 15%;
+    .info{
+        height: 90%;
     }
 
-    .title{
-        font-size: x-large;
+    .left{
+        width: 100%;
+        height: 70%;
     }
 
-    .bottom{
-        align-items: flex-start;
+    .details{
+        width: 100%;
+        border-radius: 10px;
     }
 
-    .pending{
-        height: 12.5%;
+    .high{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
 
-    .request{
-        font-size: x-small;
+    .lt{
+        width: 40%;
     }
 
-    .approve{
+    .dp{
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .rt{
+        width: 60%;
+    }
+
+    .volunteers{
         width: 90%;
-        height: 50%;
+        border-radius: 10px;
+        text-align: center;
     }
 
-    .deny{
+    .east{
+        justify-content: flex-end;
+    }
+
+    .campaigns{
         width: 90%;
-        height: 50%;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .right{
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        height: 30%;
+    }
+
+    .recent{
+        width: 100%;
+        height: 85%;
+        border-radius: 10px;
     }
 }

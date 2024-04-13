@@ -8,6 +8,12 @@ export default async function ngoProfile() {
         if(session.user?.email==="D"){
             redirect(`/profile/donor/${session.user.name}`)
         }
+        else if(session.user?.email==="B"){
+            redirect(`/profile/needy/${session.user.name}`)
+        }
+        else if(session.user?.email==="S"){
+            redirect(`/profile/service/${session.user.name}`)
+        }
     }
     else{
         redirect("/login")

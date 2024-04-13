@@ -1,6 +1,6 @@
 "use client"
 import { FormEvent, useEffect, useState } from "react"
-import styles from "./ngo.module.css"
+import styles from "./service.module.css"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 
@@ -13,6 +13,7 @@ export default function Form() {
             method:"POST",
             body: JSON.stringify({
                 name: formData.get("name"),
+                service: formData.get("service"),
                 email: formData.get("email"),
                 phone: formData.get("phone"),
                 country: formData.get("country"),
@@ -70,6 +71,15 @@ export default function Form() {
                         </div>
                         <div className={styles.input}>
                             <input name="name" type="text" placeholder="No constraints" required/>
+                        </div>
+                    </div>
+                    <div className={styles.space}></div>
+                    <div className={styles.service}>
+                        <div className={styles.label}>
+                            <label>Service :</label>
+                        </div>
+                        <div className={styles.input}>
+                            <input name="service" type="text" placeholder="No constraints" required/>
                         </div>
                     </div>
                     <div className={styles.space}></div>

@@ -8,10 +8,19 @@ import { signOut } from 'next-auth/react'
 interface ApiResponse {
   data: {
     map(arg0: (needy: any,index: number) => React.JSX.Element): React.ReactNode
-    username: string,
+    id: number,
     firstname: string,
     middlename: string,
-    lastname: string
+    lastname: string,
+    age: number,
+    email: string,
+    phone: number,
+    wallet: string,
+    country: string,
+    state: string,
+    district: string,
+    city: string,
+    pin: number
   }
 }
 
@@ -130,7 +139,24 @@ export default function Approvals({ session }: { session: string }) {
                                 <p>{needy.firstname} {needy.middlename} {needy.lastname} has requested for approval</p>
                             </div>
                             <div className={styles.approval}>
-                                <button className={styles.approve}>Approve</button>
+                              <Link className={styles.approve} href={{
+                                pathname: `/profile/ngo/${session}/campaigns/create/direct`,
+                                query: {
+                                  id: needy.id,
+                                  firstname: needy.firstname,
+                                  middlename: needy.middlename,
+                                  lastname: needy.lastname,
+                                  age: needy.age,
+                                  email: needy.email,
+                                  phone: needy.phone,
+                                  wallet: needy.wallet,
+                                  country: needy.country,
+                                  state: needy.state,
+                                  district: needy.district,
+                                  city: needy.city,
+                                  pin: needy.pin
+                                }
+                            }}>Approve</Link>
                             </div>
                             <div className={styles.denial}>
                                 <button className={styles.deny}>Deny</button>
