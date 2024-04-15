@@ -1,0 +1,27 @@
+import { getServerSession } from "next-auth"
+import { redirect } from "next/navigation"
+import Donations from "./donations"
+
+export default async function ngoProfile() {
+    const session=await getServerSession()
+    if(session){
+        if(session.user?.email==="N"){
+            redirect(`/profile/ngo/${session.user.name}`)
+        }
+        else if(session.user?.email==="B"){
+            redirect(`/profile/needy/${session.user.name}`)
+        }
+        else if(session.user?.email==="S"){
+            redirect(`/profile/service/${session.user.name}`)
+        }
+    }
+    else{
+        redirect("/login")
+    }
+    return(
+        <>
+            <title>GIV3R丨Profile</title>
+            <Donations session={session.user?.name || ''}/>
+        </>
+  )
+}

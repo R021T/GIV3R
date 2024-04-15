@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import styles from "./campaigns.module.css"
+import Link from "next/link"
 
 interface ApiResponse {
     data: {
@@ -118,7 +119,14 @@ export default function CampaignsPage(){
                                     <p>Hosted by {campaigns.ngo_name}</p>
                                 </div>
                                 <div className={styles.pay}>
-                                    <button>Donate</button>
+                                    <Link className={styles.link} href={{
+                                        pathname: '/payments',
+                                        query:{
+                                            type: campaigns.type,
+                                            wallet: campaigns.wallet,
+                                            balance: campaigns.target-campaigns.raised
+                                        }
+                                    }}>Donate</Link>
                                 </div>
                             </div>
                             <div className={styles.space}></div>

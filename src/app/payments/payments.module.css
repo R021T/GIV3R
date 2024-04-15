@@ -6,22 +6,6 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.above{
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100%;
-    height: 60%;
-}
-
-.below{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    height: 40%;
-}
-
 .top{
     width: 100%;
     height: 30%;
@@ -83,120 +67,101 @@
     height: 70%;
 }
 
-.box{
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+.form{
     width: 100%;
     height: 100%;
 }
 
-.campaigns{
-    width: 95%;
-    height: 95%;
-    overflow-y: auto;
-}
-
-.card{
-    width: 23%;
-    height: 80%;
-    background: white;
-    border-radius: 15px;
+.left{
+    width: 50%;
+    height: 100%;
     float: left;
 }
 
-.card:hover{
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-}
-
-.head{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.type{
     width: 100%;
-    height: 10%;
-    background: #2774bc;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    height: 33.33%;
 }
 
-.head h1{
-    color: white;
-    font-size: medium;
-}
-
-.cause{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.from{
     width: 100%;
-    height: 30%;
-    text-align: center;
+    height: 33.33%;
 }
 
 .to{
     width: 100%;
-    height: 30%;
+    height: 33.33%;
 }
 
-.to p{
-    font-size: smaller;
-}
-
-.to h6{
-    font-size: x-small;
-}
-
-.left{
-    width: 5%;
-    height: 100%;
-    float: left;
-}
-
-.right{
-    width: 95%;
-    height: 100%;
-    float: left;
-}
-
-.by{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 10%;
-}
-
-.pay{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 20%;
-}
-
-.link{
+.label{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 30%;
-    height: 50%;
+    height: 100%;
+    float: left;
+}
+
+.label label{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.input{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+.input input{
+    width: 80%;
+    height: 30%;
+    background: white;
+    border: 0;
+    border-radius: 40px;
+    font-size: medium;
+    text-align: center;
+}
+
+.right{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.balance{
+    width: 100%;
+    height: 33.33%;
+}
+
+.amount{
+    width: 100%;
+    height: 33.33%;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 33.33%;
+}
+
+.submit input{
+    width: 15%;
+    height: 25%;
     background: #2774bc;
     color: white;
     border: 0;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     font-family: 'Plus Jakarta Sans', sans-serif;
-    text-decoration: none;
 }
 
-.link:hover{
+.submit input:hover{
     cursor: pointer;
     background: #6cace4;
-}
-
-.space{
-    width: 2%;
-    height: 85%;
-    float: left;
 }

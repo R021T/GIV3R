@@ -22,7 +22,7 @@ export default async function Campaigns(){
                     </div>
                     <div className={styles.two}></div>
                     <div className={styles.three}>
-                        <h1>CAMPAIGNS</h1>
+                        <h1>Campaigns</h1>
                     </div>
                 </div>
                 <div className={styles.bottom}>

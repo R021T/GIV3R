@@ -1,29 +1,25 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import styles from "./dashboard.module.css"
+import styles from "./donations.module.css"
 import Image from "next/image"
 import Link from 'next/link'
 import { signOut } from 'next-auth/react'
 
 interface ApiResponse {
   data: {
-    firstname: string,
-    middlename: string,
-    lastname: string,
-    username: string,
-    total: number,
-    number: number,
-    wallet: string
+    map(arg0: (donor: any, index: number) => React.JSX.Element): React.ReactNode
+    to_name: string,
+    amount: number
   }
 }
 
-export default function Dashboard() {
+export default function Donations({ session }: { session: string }) {
   const [data, setData] = useState<ApiResponse | null>(null)
   const [isLoading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch("/api/profile/donor/dashboard")
+    fetch("/api/profile/donor/payments")
       .then((res) => res.json())
       .then((apiData: ApiResponse) => {
         setData(apiData)
@@ -90,17 +86,17 @@ export default function Dashboard() {
           </div>
           <div className={styles.two}>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/donor/${data.data.username}/dashboard`}>
-                <button className={styles.active}>Dashboard</button>
+              <Link className={styles.link} href={`/profile/donor/${session}/dashboard`}>
+                <button className={styles.button}>Dashboard</button>
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/donor/${data.data.username}/donations`}>
-                <button className={styles.button}>Donations</button>
+              <Link className={styles.link} href={`/profile/donor/${session}/donations`}>
+                <button className={styles.active}>Donations</button>
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/donor/${data.data.username}`}>
+              <Link className={styles.link} href={`/profile/donor/${session}`}>
                 <button className={styles.button}>Volunteers</button>
               </Link>
             </div>
@@ -109,43 +105,22 @@ export default function Dashboard() {
             <button className={styles.logout} onClick={()=>{signOut()}}>Logout</button>
           </div>
         </div>
-        <div className={styles.dashboard}>
-          <div className={styles.info}>
-            <div className={styles.left}>
-              <div className={styles.top}>
-                <div className={styles.details}>
-                  <div className={styles.high}>
-                    <div className={styles.lt}>
-                      <Image className={styles.dp} priority={true} src={"/profile.png"} width={175} height={175} alt="Profile"/>
-                    </div>
-                    <div className={styles.rt}>
-                      <h1 className={styles.name}>{data.data.firstname} {data.data.middlename} {data.data.lastname}</h1>
-                    </div>
-                  </div>
-                  <div className={styles.low}>
-                    <p>Wallet details: {data.data.wallet}</p>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.bottom}>
-                <div className={styles.west}>
-                  <div className={styles.volunteers}>
-                    <p>Total donation: {data.data.total}</p>
-                  </div>
-                </div>
-                <div className={styles.east}>
-                  <div className={styles.campaigns}>
-                    <p>Number of donations: {data.data.number}</p>
-                  </div>
-                </div>
-              </div>
+        <div className={styles.donations}>
+            <div className={styles.top}>
+                <h1 className={styles.title}>Donation History</h1>
             </div>
-            <div className={styles.right}>
-              <div className={styles.recent}>
-                <p>Recent donations:</p>
-              </div>
+            <div className={styles.bottom}>
+                <div className={styles.flex}>
+                    {data.data.map((donor: any,index: number) => (
+                        <div className={styles.pending} key={index}>
+                            <div className={styles.list}>
+                                <p>Donated {donor.amount} ETH to {donor.to_name}</p>
+                            </div>
+                            <div className={styles.space}></div>
+                        </div>
+                    ))}
+                </div>
             </div>
-          </div>
         </div>
       </div>
     </>
