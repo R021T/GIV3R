@@ -11,7 +11,9 @@ interface ApiResponse {
     middlename: string,
     lastname: string,
     username: string,
-    campaigns: number
+    total: number,
+    number: number,
+    wallet: string
   }
 }
 
@@ -121,19 +123,19 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div className={styles.low}>
-                    <p>Wallet details:</p>
+                    <p>Wallet details: {data.data.wallet}</p>
                   </div>
                 </div>
               </div>
               <div className={styles.bottom}>
                 <div className={styles.west}>
                   <div className={styles.volunteers}>
-                    <p>Total donation:</p>
+                    <p>Total donation: {data.data.total}</p>
                   </div>
                 </div>
                 <div className={styles.east}>
                   <div className={styles.campaigns}>
-                    <p>Number of donations:</p>
+                    <p>Number of donations: {data.data.number}</p>
                   </div>
                 </div>
               </div>
