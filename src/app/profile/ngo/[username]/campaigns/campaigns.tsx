@@ -9,7 +9,10 @@ interface ApiResponse {
   data: {
     map(arg0: (campaign: any, index: number) => React.JSX.Element): React.ReactNode
     name: string,
-    username: string
+    cause: string,
+    volunteers: number,
+    target: number,
+    raised: number
   }
 }
 
@@ -127,20 +130,20 @@ export default function Campaigns({ session }: { session: string }) {
                         <tr>
                           <th>ID</th>
                           <th>Name</th>
-                          <th>Description</th>
-                          <th>Amount</th>
+                          <th>Cause</th>
                           <th>Volunteers</th>
+                          <th>Target</th>
                           <th>Raised</th>
                         </tr>
                       </thead>
                       <tbody>
                         {data.data.map((campaign: any, index: number) => (
                           <tr key={index}>
-                            <td>{campaign.id}</td>
+                            <td>{index}</td>
                             <td>{campaign.name}</td>
-                            <td>{campaign.description}</td>
-                            <td>{campaign.amount}</td>
+                            <td>{campaign.cause}</td>
                             <td>{campaign.volunteers}</td>
+                            <td>{campaign.target}</td>
                             <td>{campaign.raised}</td>
                           </tr>
                         ))}

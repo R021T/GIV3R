@@ -9,7 +9,9 @@ interface ApiResponse {
   data: {
     name: string,
     username: string,
-    campaigns: number
+    campaigns: number,
+    volunteers: number,
+    wallet: string
   }
 }
 
@@ -129,14 +131,14 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div className={styles.low}>
-                    <p>Wallet details:</p>
+                    <p>Wallet details: {data.data.wallet}</p>
                   </div>
                 </div>
               </div>
               <div className={styles.bottom}>
                 <div className={styles.west}>
                   <div className={styles.volunteers}>
-                    <p>Number of volunteers:</p>
+                    <p>Number of volunteers: {data.data.volunteers}</p>
                   </div>
                 </div>
                 <div className={styles.east}>

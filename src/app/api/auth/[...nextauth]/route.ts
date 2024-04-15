@@ -22,7 +22,8 @@ const handler = NextAuth({
                     return{
                         id: ngo.id,
                         name: ngo.username,
-                        email: "N"
+                        email: "N",
+                        image: ngo.wallet
                     }
                 }
             }
@@ -34,7 +35,8 @@ const handler = NextAuth({
                     return{
                         id: donor.id,
                         name: donor.username,
-                        email: "D"
+                        email: "D",
+                        image: donor.wallet
                     }
                 }
             }
@@ -46,19 +48,21 @@ const handler = NextAuth({
                     return{
                         id: needy.id,
                         name: needy.username,
-                        email: "B"
+                        email: "B",
+                        image: needy.wallet
                     }
                 }
             }
             else if(credentials?.category==="Service Provider"){
                 const response=await sql`select * from service where username=${credentials.username}`
-                const needy=response.rows[0]
-                const passwordCheck=await compare(credentials.password || "",needy.password)
+                const service=response.rows[0]
+                const passwordCheck=await compare(credentials.password || "",service.password)
                 if(passwordCheck){
                     return{
-                        id: needy.id,
-                        name: needy.username,
-                        email: "S"
+                        id: service.id,
+                        name: service.username,
+                        email: "S",
+                        image: service.wallet
                     }
                 }
             }
