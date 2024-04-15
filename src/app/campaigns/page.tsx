@@ -5,7 +5,7 @@ import Image from "next/image"
 import CampaignsPage from "./campaigns";
 
 export default async function Campaigns(){
-    const session=getServerSession()
+    const session=await getServerSession()
     if(!session){
         redirect("/login")
     }
