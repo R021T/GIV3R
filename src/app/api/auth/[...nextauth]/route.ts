@@ -15,7 +15,7 @@ const handler = NextAuth({
           },
           async authorize (credentials, req) {
             if(credentials?.category==="NGO"){
-                const response=await sql`select * from ngo where username=${credentials?.username}`
+                const response=await sql`select * from ngo where username=${credentials?.username};`
                 const ngo=response.rows[0]
                 const passwordCheck=await compare(credentials?.password || "",ngo.password)
                 if(passwordCheck){
@@ -28,7 +28,7 @@ const handler = NextAuth({
                 }
             }
             else if(credentials?.category==="Donor"){
-                const response=await sql`select * from donor where username=${credentials?.username}`
+                const response=await sql`select * from donor where username=${credentials?.username};`
                 const donor=response.rows[0]
                 const passwordCheck=await compare(credentials?.password || "",donor.password)
                 if(passwordCheck){
@@ -41,7 +41,7 @@ const handler = NextAuth({
                 }
             }
             else if(credentials?.category==="Beneficiary"){
-                const response=await sql`select * from needy where username=${credentials.username}`
+                const response=await sql`select * from needy where username=${credentials.username};`
                 const needy=response.rows[0]
                 const passwordCheck=await compare(credentials.password || "",needy.password)
                 if(passwordCheck){
@@ -54,7 +54,7 @@ const handler = NextAuth({
                 }
             }
             else if(credentials?.category==="Service Provider"){
-                const response=await sql`select * from service where username=${credentials.username}`
+                const response=await sql`select * from service where username=${credentials.username};`
                 const service=response.rows[0]
                 const passwordCheck=await compare(credentials.password || "",service.password)
                 if(passwordCheck){

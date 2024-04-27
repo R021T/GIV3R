@@ -4,9 +4,9 @@ import { NextResponse } from "next/server"
 
 export async function GET(){
     const session=await getServerSession()
-    const donor=await sql`select * from donor where username=${session?.user?.name}`
+    const donor=await sql`select * from donor where username=${session?.user?.name};`
     const donor_id=donor.rows[0].id
-    const response=await sql`select * from payment where from_id=${donor_id}`
+    const response=await sql`select * from payment where from_id=${donor_id};`
     const data=response.rows
     return NextResponse.json({data})
 }
