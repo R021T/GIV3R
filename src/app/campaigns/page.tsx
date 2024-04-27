@@ -1,15 +1,8 @@
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
 import styles from "./campaigns.module.css"
 import Image from "next/image"
 import CampaignsPage from "./campaigns";
 
 export default async function Campaigns(){
-    const session=await getServerSession()
-    if(!session){
-        redirect("/login")
-    }
-
     return(
         <>
             <div className={styles.canvas}>

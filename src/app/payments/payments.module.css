@@ -78,9 +78,21 @@
     float: left;
 }
 
-.type{
+.typenid{
     width: 100%;
     height: 33.33%;
+}
+
+.nothing{
+    width: 10%;
+    height: 100%;
+    float: left;
+}
+
+.type,.id{
+    width: 40%;
+    height: 100%;
+    float: left;
 }
 
 .from{

@@ -7,6 +7,7 @@ import Link from "next/link"
 interface ApiResponse {
     data: {
         map(arg0: (campaigns: any, index: number) => React.JSX.Element): React.ReactNode
+        id: number,
         name: string,
         cause: string,
         volunteers: number,
@@ -122,6 +123,7 @@ export default function CampaignsPage(){
                                     <Link className={styles.link} href={{
                                         pathname: '/payments',
                                         query:{
+                                            id: campaigns.id,
                                             type: campaigns.type,
                                             wallet: campaigns.wallet,
                                             balance: campaigns.target-campaigns.raised

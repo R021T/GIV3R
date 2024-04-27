@@ -3,7 +3,7 @@ import { sql } from "@vercel/postgres"
 
 export async function POST(request:Request) {
     try{
-        const{type,from,to,left,amount}=await request.json()
+        const{id,type,from,to,left,amount}=await request.json()
         if(type==='DB'){
             const to_data=await sql`select * from needy where wallet=${to}`
             const to_id=to_data.rows[0].id
@@ -17,16 +17,15 @@ export async function POST(request:Request) {
             const from_middlename=from_data.rows[0].middlename
             const from_lastname=from_data.rows[0].lastname
             const from_name=`${from_firstname} ${from_middlename} ${from_lastname}`
-            const response=await sql`insert into payment(from_id,from_name,to_id,to_name,amount,type) values(${from_id},${from_name},${to_id},${to_name},${amount},${type})`
+            const response=await sql`insert into payment(from_id,from_name,to_id,to_name,amount,type,campaign_id) values(${from_id},${from_name},${to_id},${to_name},${amount},${type},${id})`
             if(response){
-                const campaign=await sql`select * from campaign where wallet=${to}`
-                const campaign_id=campaign.rows[0].id
+                const campaign=await sql`select * from campaign where id=${id}`
                 const campaign_target=campaign.rows[0].target
-                const update=await sql`update campaign set raised=raised+${amount} where id=${campaign_id}`
-                const raise=await sql`select * from campaign where id=${campaign_id}`
+                const update=await sql`update campaign set raised=raised+${amount} where id=${id}`
+                const raise=await sql`select * from campaign where id=${id}`
                 const raised=raise.rows[0].raised
                 if(raised>=campaign_target){
-                    const complete=await sql`update campaign set status='Complete' where id=${campaign_id}`
+                    const complete=await sql`update campaign set status='Complete' where id=${id}`
                 }
                 const total=await sql`update donor set total=total+${amount} where id=${from_id}`
                 const number=await sql`update donor set number=number+1 where id=${from_id}`
@@ -42,8 +41,16 @@ export async function POST(request:Request) {
             const from_middlename=from_data.rows[0].middlename
             const from_lastname=from_data.rows[0].lastname
             const from_name=`${from_firstname} ${from_middlename} ${from_lastname}`
-            const response=await sql`insert into payment(from_id,from_name,to_id,to_name,amount,type) values(${from_id},${from_name},${to_id},${to_name},${amount},${type})`
+            const response=await sql`insert into payment(from_id,from_name,to_id,to_name,amount,type,campaign_id) values(${from_id},${from_name},${to_id},${to_name},${amount},${type},${id})`
             if(response){
+                const campaign=await sql`select * from campaign where id=${id}`
+                const campaign_target=campaign.rows[0].target
+                const update=await sql`update campaign set raised=raised+${amount} where id=${id}`
+                const raise=await sql`select * from campaign where id=${id}`
+                const raised=raise.rows[0].raised
+                if(raised>=campaign_target){
+                    const complete=await sql`update campaign set status='Complete' where id=${id}`
+                }
                 const total=await sql`update donor set total=total+${amount} where id=${from_id}`
                 const number=await sql`update donor set number=number+1 where id=${from_id}`
             }

@@ -6,6 +6,7 @@ import Form from "./form"
 
 export default async function pay({searchParams}:{
     searchParams: {
+        id: number,
         type: string,
         wallet: string,
         balance: number
@@ -14,6 +15,7 @@ export default async function pay({searchParams}:{
     const session=await getServerSession()
     const details = [
         {
+            id: searchParams.id,
             type: searchParams.type,
             from: session?.user?.image,
             to: searchParams.wallet,
@@ -27,7 +29,7 @@ export default async function pay({searchParams}:{
 
     else if(session.user?.email==='N' || session.user?.email==='B' || session.user?.email==='S'){
         alert("You are not a registered donor!")
-        redirect('/')
+        redirect('/campaigns')
     }
 
     return(

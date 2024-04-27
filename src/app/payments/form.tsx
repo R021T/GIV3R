@@ -8,7 +8,7 @@ import { ethers } from "../../../node_modules/ethers/lib/index"
 export default function Form({details}: any) {
     const router=useRouter()
     const contractABI = SolidFundrABI.abi;
-    const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+    const contractAddress = "0x1E884952C24542fF7a17704F75B3eEACD3de6ccB";
     
     const initWallet=async()=>{
         if(window.ethereum){
@@ -23,15 +23,18 @@ export default function Form({details}: any) {
     const handleSubmit=async (e:FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
         const formData=new FormData(e.currentTarget)
-
         const contract=await initWallet()
-        const amount = ethers.BigNumber.from(formData.get("amount"))
+        const amt: string = formData.get("amount") as string;
+        const amount=ethers.utils.parseEther(amt)
+        const idString: string = formData.get("id") as string;
+        const id: number = idString ? parseInt(idString, 10) : 0
         try {
-            const donationTx = await contract?.donate(0, { value: amount });
+            const donationTx = await contract?.donate(id, { value: amount });
             await donationTx.wait();
             const response=await fetch("/api/payments",{
                 method:"POST",
                 body: JSON.stringify({
+                    id: id,
                     type: formData.get("type"),
                     from: formData.get("from"),
                     to: formData.get("to"),
@@ -55,12 +58,23 @@ export default function Form({details}: any) {
         {details.map((details: any, index: number)=>(
             <form className={styles.form} key={index} onSubmit={handleSubmit}>
                 <div className={styles.left}>
-                    <div className={styles.type}>
-                        <div className={styles.label}>
-                            <label>Type :</label>
+                    <div className={styles.typenid}>
+                        <div className={styles.nothing}></div>
+                        <div className={styles.type}>
+                            <div className={styles.label}>
+                                <label>Type :</label>
+                            </div>
+                            <div className={styles.input}>
+                                <input type="text" name="type" value={details.type} readOnly required></input>
+                            </div>
                         </div>
-                        <div className={styles.input}>
-                            <input type="text" name="type" value={details.type} readOnly required></input>
+                        <div className={styles.id}>
+                            <div className={styles.label}>
+                                <label>ID :</label>
+                            </div>
+                            <div className={styles.input}>
+                                <input type="text" name="id" value={details.id} readOnly required></input>
+                            </div>
                         </div>
                     </div>
                     <div className={styles.from}>
@@ -86,7 +100,7 @@ export default function Form({details}: any) {
                             <label>Raise left :</label>
                         </div>
                         <div className={styles.input}>
-                            <input type="number" name="left" value={details.left} readOnly required></input>
+                            <input type="text" name="left" value={details.left} readOnly required></input>
                         </div>
                     </div>
                     <div className={styles.amount}>
@@ -94,7 +108,7 @@ export default function Form({details}: any) {
                             <label>Enter amount :</label>
                         </div>
                         <div className={styles.input}>
-                            <input type="number" name="amount" placeholder="Enter amount in ETH" required></input>
+                            <input type="text" name="amount" placeholder="Enter amount in ETH" required></input>
                         </div>
                     </div>
                     <div className={styles.submit}>

@@ -8,7 +8,7 @@ import { ethers } from "../../../../../../../node_modules/ethers/lib/index"
 export default function Form({ session }: { session: string }) {
     const router=useRouter()
     const contractABI = SolidFundrABI.abi;
-    const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+    const contractAddress="0x1E884952C24542fF7a17704F75B3eEACD3de6ccB";
 
     const initWallet=async()=>{
         if(window.ethereum){
@@ -25,17 +25,24 @@ export default function Form({ session }: { session: string }) {
         const formData=new FormData(e.currentTarget)
 
         const contract=await initWallet()
-        const targetAmount = ethers.BigNumber.from(formData.get("amount"))
+        const amt: string = formData.get("amount") as string;
+        const targetAmount=ethers.utils.parseEther(amt)
         const targetAddress = session
         const title = formData.get("name")
         const description = formData.get("cause")
 
         try{
+            let fundId
             const createFundTx = await contract?.createFund(targetAmount, targetAddress, title, description);
-            await createFundTx.wait();
+            const receipt=await createFundTx.wait();
+            const event=receipt.events.find((event: { event: string; })=>event.event==="FundCreated")
+            if(event){
+                fundId=event.args.id.toNumber()
+            }
             const response=await fetch("/api/profile/ngo/campaigns",{
                 method:"POST",
                 body: JSON.stringify({
+                    id: fundId,
                     type: 'CC',
                     name: formData.get("name"),
                     cause: formData.get("cause"),
@@ -76,7 +83,7 @@ export default function Form({ session }: { session: string }) {
                         <label>Amount required:</label>
                     </div>
                     <div className={styles.south}>
-                        <input name="amount" type="number" placeholder="No constraints" required></input>
+                        <input name="amount" type="text" placeholder="No constraints" required></input>
                     </div>
                 </div>
                 <div className={styles.east}>
