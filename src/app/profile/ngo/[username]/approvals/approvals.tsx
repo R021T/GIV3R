@@ -26,8 +26,8 @@ interface ApiResponse {
   }
 }
 
+const router=useRouter()
 async function handleDeny(user: string){
-  const router=useRouter()
   const response=await fetch("/api/profile/ngo/denials",{
     method:"POST",
     body: JSON.stringify({
