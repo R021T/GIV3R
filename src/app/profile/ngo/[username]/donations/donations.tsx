@@ -1,52 +1,27 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import styles from "./approvals.module.css"
+import styles from "./donations.module.css"
 import Image from "next/image"
 import Link from 'next/link'
 import { signOut } from 'next-auth/react'
-import { useRouter } from "next/navigation"
 
 interface ApiResponse {
   data: {
-    map(arg0: (needy: any,index: number) => React.JSX.Element): React.ReactNode
-    id: number,
-    username: string,
-    firstname: string,
-    middlename: string,
-    lastname: string,
-    age: number,
-    email: string,
-    phone: number,
-    wallet: string,
-    country: string,
-    state: string,
-    district: string,
-    city: string,
-    pin: number
+    map(arg0: (donor: any, index: number) => React.JSX.Element): React.ReactNode
+    from_name: string,
+    amount: number,
+    campaign_id: number,
+    type: string
   }
 }
 
-async function handleDeny(user: string){
-  const router=useRouter()
-  const response=await fetch("/api/profile/ngo/denials",{
-    method:"POST",
-    body: JSON.stringify({
-        username: user
-    })
-})
-if(response){
-    router.push("/profile")
-    router.refresh()
-}
-}
-
-export default function Approvals({ session }: { session: string }) {
+export default function Donations({ session }: { session: string }) {
   const [data, setData] = useState<ApiResponse | null>(null)
   const [isLoading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch("/api/profile/ngo/approvals")
+    fetch("/api/profile/ngo/donations")
       .then((res) => res.json())
       .then((apiData: ApiResponse) => {
         setData(apiData)
@@ -119,7 +94,7 @@ export default function Approvals({ session }: { session: string }) {
             </div>
             <div className={styles.select}>
               <Link className={styles.link} href={`/profile/ngo/${session}/donations`}>
-                <button className={styles.button}>Donations</button>
+                <button className={styles.active}>Donations</button>
               </Link>
             </div>
             <div className={styles.select}>
@@ -128,8 +103,8 @@ export default function Approvals({ session }: { session: string }) {
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`profile/ngo/${session}/approvals`}>
-                <button className={styles.active}>Approvals</button>
+              <Link className={styles.link} href={`/profile/ngo/${session}/approvals`}>
+                <button className={styles.button}>Approvals</button>
               </Link>
             </div>
           </div>
@@ -137,46 +112,21 @@ export default function Approvals({ session }: { session: string }) {
             <button className={styles.logout} onClick={()=>{signOut()}}>Logout</button>
           </div>
         </div>
-        <div className={styles.approvals}>
+        <div className={styles.donations}>
             <div className={styles.top}>
-                <h1 className={styles.title}>Pending Approvals</h1>
+                <h1 className={styles.title}>Donation History</h1>
             </div>
             <div className={styles.bottom}>
-            <div className={styles.flex}>
-                {data.data.map((needy: any,index: number) => (
-                    <div key={index} className={styles.pending}>
-                        <div className={styles.list}>
-                            <div className={styles.request}>
-                                <p>{needy.firstname} {needy.middlename} {needy.lastname} has requested for approval</p>
+                <div className={styles.flex}>
+                    {data.data.map((donor: any,index: number) => (
+                        <div className={styles.pending} key={index}>
+                            <div className={styles.list}>
+                                <p>Received {donor.amount} ETH from {donor.from_name} to Campaign {donor.campaign_id} of Type {donor.type}</p>
                             </div>
-                            <div className={styles.approval}>
-                              <Link className={styles.approve} href={{
-                                pathname: `/profile/ngo/${session}/campaigns/create/direct`,
-                                query: {
-                                  id: needy.id,
-                                  firstname: needy.firstname,
-                                  middlename: needy.middlename,
-                                  lastname: needy.lastname,
-                                  age: needy.age,
-                                  email: needy.email,
-                                  phone: needy.phone,
-                                  wallet: needy.wallet,
-                                  country: needy.country,
-                                  state: needy.state,
-                                  district: needy.district,
-                                  city: needy.city,
-                                  pin: needy.pin
-                                }
-                            }}>Approve</Link>
-                            </div>
-                            <div className={styles.denial}>
-                              <button className={styles.deny} onClick={() => handleDeny(needy.username)}>Deny</button>
-                            </div>
+                            <div className={styles.space}></div>
                         </div>
-                        <div className={styles.space}></div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
             </div>
         </div>
       </div>

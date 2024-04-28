@@ -10,7 +10,7 @@ export async function POST(request:Request) {
             const to_firstname=to_data.rows[0].firstname
             const to_middlename=to_data.rows[0].middlename
             const to_lastname=to_data.rows[0].lastname
-            const to_name=`${to_firstname} ${to_middlename} ${to_lastname};`
+            const to_name=`${to_firstname} ${to_middlename} ${to_lastname}`
             const from_data=await sql`select * from donor where wallet=${from};`
             const from_id=from_data.rows[0].id
             const from_firstname=from_data.rows[0].firstname

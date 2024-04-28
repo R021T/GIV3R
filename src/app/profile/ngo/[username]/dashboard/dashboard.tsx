@@ -15,8 +15,18 @@ interface ApiResponse {
   }
 }
 
+interface ApiResponse2{
+  data: {
+    map(arg0: (recent: any, index: number) => React.JSX.Element): React.ReactNode
+    amount: number,
+    type: string,
+    campaign_id: number
+  }
+}
+
 export default function Dashboard() {
   const [data, setData] = useState<ApiResponse | null>(null)
+  const [data2, setData2] = useState<ApiResponse2 | null>(null)
   const [isLoading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -25,6 +35,20 @@ export default function Dashboard() {
       .then((res) => res.json())
       .then((apiData: ApiResponse) => {
         setData(apiData)
+        setLoading(false)
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error)
+        setError("An error occurred while fetching data.")
+        setLoading(false);
+      })
+  }, [])
+
+  useEffect(() => {
+    fetch("/api/profile/donor/dashboard/recent")
+      .then((res) => res.json())
+      .then((apiData: ApiResponse2) => {
+        setData2(apiData)
         setLoading(false)
       })
       .catch((error) => {
@@ -93,18 +117,13 @@ export default function Dashboard() {
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}`}>
+              <Link className={styles.link} href={`/profile/ngo/${data.data.username}/donations`}>
                 <button className={styles.button}>Donations</button>
               </Link>
             </div>
             <div className={styles.select}>
               <Link className={styles.link} href={`/profile/ngo/${data.data.username}/campaigns`}>
                 <button className={styles.button}>Campaigns</button>
-              </Link>
-            </div>
-            <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}`}>
-                <button className={styles.button}>Volunteers</button>
               </Link>
             </div>
             <div className={styles.select}>
@@ -150,7 +169,13 @@ export default function Dashboard() {
             </div>
             <div className={styles.right}>
               <div className={styles.recent}>
-                <p>Recent donations:</p>
+              <p className={styles.title}>Recent Donations</p>
+                <br/>
+                <div className={styles.history}>
+                  {data2?.data.map((recent: any,index: number) => (
+                    <p key={index}>{recent.amount} from {recent.type}: {recent.campaign_id}</p>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

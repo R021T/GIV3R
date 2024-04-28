@@ -8,7 +8,7 @@ import { signOut } from 'next-auth/react'
 interface ApiResponse {
   data: {
     map(arg0: (donor: any, index: number) => React.JSX.Element): React.ReactNode
-    to_name: string,
+    from_name: string,
     amount: number
   }
 }
@@ -19,7 +19,7 @@ export default function Donations({ session }: { session: string }) {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch("/api/profile/donor/payments")
+    fetch("/api/profile/needy/donations")
       .then((res) => res.json())
       .then((apiData: ApiResponse) => {
         setData(apiData)
@@ -86,12 +86,12 @@ export default function Donations({ session }: { session: string }) {
           </div>
           <div className={styles.two}>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/donor/${session}/dashboard`}>
+              <Link className={styles.link} href={`/profile/needy/${session}/dashboard`}>
                 <button className={styles.button}>Dashboard</button>
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/donor/${session}/donations`}>
+              <Link className={styles.link} href={`/profile/needy/${session}/donations`}>
                 <button className={styles.active}>Donations</button>
               </Link>
             </div>
@@ -109,7 +109,7 @@ export default function Donations({ session }: { session: string }) {
                     {data.data.map((donor: any,index: number) => (
                         <div className={styles.pending} key={index}>
                             <div className={styles.list}>
-                                <p>Donated {donor.amount} ETH to {donor.to_name}</p>
+                                <p>Received {donor.amount} ETH from {donor.from_name}</p>
                             </div>
                             <div className={styles.space}></div>
                         </div>

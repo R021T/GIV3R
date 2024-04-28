@@ -248,15 +248,29 @@
 }
 
 .recent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 95%;
     height: 100%;
     margin-right: 0;
     background: white;
     border-radius: 20px;
     float: left;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+
+.history{
+    width: 100%;
+    height: 90%;
+}
+
+.history p{
+    text-align: center;
 }
 
 @media screen and (orientation:portrait){

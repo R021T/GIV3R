@@ -2,10 +2,10 @@ import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
 import Donations from "./donations"
 
-export default async function donorProfile() {
+export default async function ngoProfile() {
     const session=await getServerSession()
     if(session){
-        if(session.user?.email==="N"){
+        if(session.user?.email==="D"){
             redirect(`/profile/ngo/${session.user.name}/dashboard`)
         }
         else if(session.user?.email==="B"){

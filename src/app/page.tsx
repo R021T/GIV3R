@@ -29,33 +29,37 @@ export default function Home() {
       </head>
       <body>
         <nav className="navbar">
-          <Link href="#LetsSpreadSmiles">
+          <Link href="#home">
             <button className="home">HOME</button>
           </Link>
-          <Link href="#WeAreGIV3R">
+          <Link href="#about">
             <button className="about">ABOUT</button>
           </Link>
           <Link href={"/campaigns"}>
             <button className="campaigns">CAMPAIGNS</button>
           </Link>
           <Image className="title" priority={true} src={"/logo.png"} width={600} height={300} alt="GIV3R"/>
-          <button className="volunteer">DONATIONS</button>
-          <button className="contact">CONTACT</button>
+          <Link href={"/donations"}>
+            <button className="volunteer">DONATIONS</button>
+          </Link>
+          <Link href="#contact">
+            <button className="contact">CONTACT</button>
+          </Link>
           <Link href={"/login"}>
             <button className="login">LOGIN</button>
           </Link>
         </nav>
         <div className="rectangle"></div>
-        <div className="image" id="LetsSpreadSmiles">
+        <div className="image">
           <p className="tagline">Spreading smiles, beyond borders!</p>
           <Image className="smile" src={"/smile.png"} width={1000} height={500} alt="Smile"/>
         </div>
-        <Link href="#WeAreGIV3R">
+        <Link href="#about">
           <div className="scroll"></div>
           <div className="dot"></div>
         </Link>
         <div className="bar"></div>
-        <div className="what" id="WeAreGIV3R">
+        <div className="what" id="about">
           <div className="card">
             <div className="front">
               <p className="is">What <br/>is <br/><b className="giv3r">GIV3R</b>?</p>
@@ -89,7 +93,7 @@ export default function Home() {
         <p className="flip">Flip to find out!</p>
         <h1 className="statistics">Take a look at our Stats!</h1>
         <Statistics/>
-        <form className="feedback" onSubmit={handleSubmit}>
+        <form className="feedback" id="contact" onSubmit={handleSubmit}>
           <div className="up">
             <div className="send">
               <p className="value">We value your precious feedback...</p>
@@ -133,6 +137,9 @@ export default function Home() {
             </div>
           </div>
         </form>
+        <footer>
+          <p>Designed with Love, developed with Passion</p>
+        </footer>
       </body>
     </>
   )

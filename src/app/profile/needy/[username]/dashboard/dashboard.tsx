@@ -11,8 +11,8 @@ interface ApiResponse {
     middlename: string,
     lastname: string,
     username: string,
-    total: number,
-    number: number,
+    status: string,
+    ngo: number,
     wallet: string
   }
 }
@@ -33,7 +33,7 @@ export default function Dashboard() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch("/api/profile/donor/dashboard")
+    fetch("/api/profile/needy/dashboard")
       .then((res) => res.json())
       .then((apiData: ApiResponse) => {
         setData(apiData)
@@ -47,7 +47,7 @@ export default function Dashboard() {
   }, [])
 
   useEffect(() => {
-    fetch("/api/profile/donor/dashboard/recent")
+    fetch("/api/profile/needy/dashboard/recent")
       .then((res) => res.json())
       .then((apiData: ApiResponse2) => {
         setData2(apiData)
@@ -114,12 +114,12 @@ export default function Dashboard() {
           </div>
           <div className={styles.two}>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/donor/${data.data.username}/dashboard`}>
+              <Link className={styles.link} href={`/profile/needy/${data.data.username}/dashboard`}>
                 <button className={styles.active}>Dashboard</button>
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/donor/${data.data.username}/donations`}>
+              <Link className={styles.link} href={`/profile/needy/${data.data.username}/donations`}>
                 <button className={styles.button}>Donations</button>
               </Link>
             </div>
@@ -149,12 +149,12 @@ export default function Dashboard() {
               <div className={styles.bottom}>
                 <div className={styles.west}>
                   <div className={styles.volunteers}>
-                    <p>Total donation: {data.data.total}</p>
+                    <p>Status: {data.data.status}</p>
                   </div>
                 </div>
                 <div className={styles.east}>
                   <div className={styles.campaigns}>
-                    <p>Number of donations: {data.data.number}</p>
+                    <p>Linked NGO ID: {data.data.ngo}</p>
                   </div>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function Dashboard() {
                 <br/>
                 <div className={styles.history}>
                   {data2?.data.map((recent: any,index: number) => (
-                    <p key={index}>{recent.amount} to {recent.type}: {recent.campaign_id}</p>
+                    <p key={index}>{recent.amount} from {recent.type}: {recent.campaign_id}</p>
                   ))}
                 </div>
               </div>

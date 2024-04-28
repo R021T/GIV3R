@@ -8,13 +8,13 @@ export default async function createCampaign() {
     const session=await getServerSession()
     if(session){
         if(session.user?.email==="D"){
-            redirect(`/profile/donor/${session.user.name}`)
+            redirect(`/profile/donor/${session.user.name}/dashboard`)
         }
         else if(session.user?.email==="B"){
-            redirect(`/profile/needy/${session.user.name}`)
+            redirect(`/profile/needy/${session.user.name}/dashboard`)
         }
         else if(session.user?.email==="S"){
-            redirect(`/profile/service/${session.user.name}`)
+            redirect(`/profile/service/${session.user.name}/dashboard`)
         }
     }
     else{
