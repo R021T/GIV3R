@@ -8,7 +8,7 @@ import { ethers } from "../../../node_modules/ethers/lib/index"
 export default function Form({details}: any) {
     const router=useRouter()
     const contractABI = SolidFundrABI.abi;
-    const contractAddress = "0x1E884952C24542fF7a17704F75B3eEACD3de6ccB";
+    const contractAddress = "0x2807bb2761f25Bc22c00cB804C92DAA5B39336ba";
     
     const initWallet=async()=>{
         if(window.ethereum){
@@ -27,14 +27,14 @@ export default function Form({details}: any) {
         const amt: string = formData.get("amount") as string;
         const amount=ethers.utils.parseEther(amt)
         const idString: string = formData.get("id") as string;
-        const id: number = idString ? parseInt(idString, 10) : 0
+        const fundId: number = idString ? parseInt(idString, 10) : 0
         try {
-            const donationTx = await contract?.donate(id, { value: amount });
+            const donationTx = await contract?.donate(fundId, { value: amount });
             await donationTx.wait();
             const response=await fetch("/api/payments",{
                 method:"POST",
                 body: JSON.stringify({
-                    id: id,
+                    id: fundId,
                     type: formData.get("type"),
                     from: formData.get("from"),
                     to: formData.get("to"),
