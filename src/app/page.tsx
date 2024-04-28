@@ -1,7 +1,27 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
+import Statistics from "./stats"
+import { FormEvent } from "react"
 
 export default function Home() {
+  const handleSubmit=async (e:FormEvent<HTMLFormElement>)=>{
+    e.preventDefault()
+    const formData=new FormData(e.currentTarget)
+    const response=await fetch("/api/mail",{
+        method:"POST",
+        body: JSON.stringify({
+            name: formData.get("name"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            message: formData.get("message")
+        })
+    })
+    if(response){
+      alert("Feedback submitted successfully!")
+    }
+  }
+
   return (
     <>
       <head>
@@ -19,7 +39,7 @@ export default function Home() {
             <button className="campaigns">CAMPAIGNS</button>
           </Link>
           <Image className="title" priority={true} src={"/logo.png"} width={600} height={300} alt="GIV3R"/>
-          <button className="volunteer">VOLUNTEER</button>
+          <button className="volunteer">DONATIONS</button>
           <button className="contact">CONTACT</button>
           <Link href={"/login"}>
             <button className="login">LOGIN</button>
@@ -27,7 +47,7 @@ export default function Home() {
         </nav>
         <div className="rectangle"></div>
         <div className="image" id="LetsSpreadSmiles">
-          <p className="tagline">Spreading smiles, without borders!</p>
+          <p className="tagline">Spreading smiles, beyond borders!</p>
           <Image className="smile" src={"/smile.png"} width={1000} height={500} alt="Smile"/>
         </div>
         <Link href="#WeAreGIV3R">
@@ -67,6 +87,52 @@ export default function Home() {
         </div>
         <div className="line"></div>
         <p className="flip">Flip to find out!</p>
+        <h1 className="statistics">Take a look at our Stats!</h1>
+        <Statistics/>
+        <form className="feedback" onSubmit={handleSubmit}>
+          <div className="up">
+            <div className="send">
+              <p className="value">We value your precious feedback...</p>
+            </div>
+            <div className="button">
+              <input type="submit" value={"Send"}></input>
+            </div>
+          </div>
+          <div className="down">
+            <div className="one">
+              <div className="label">
+                <label>Name</label>
+              </div>
+              <div className="input">
+                <input type="text" name="name" placeholder="Enter your name" required></input>
+              </div>
+            </div>
+            <div className="two">
+              <div className="label">
+                <label>Email</label>
+              </div>
+              <div className="input">
+                <input type="text" name="email" placeholder="Enter your email" required></input>
+              </div>
+            </div>
+            <div className="three">
+              <div className="label">
+                <label>Phone</label>
+              </div>
+              <div className="input">
+                <input type="text" name="phone" placeholder="Enter your phone no."></input>
+              </div>
+            </div>
+            <div className="four">
+              <div className="label">
+                <label>Message</label>
+              </div>
+              <div className="input">
+                <textarea name="message" placeholder="Enter your message" required></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
       </body>
     </>
   )

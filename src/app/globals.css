@@ -360,6 +360,252 @@ body{
   left: 43%;
 }
 
+.statistics{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  top: 190%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 3rem;
+  filter: opacity(75%);
+}
+
+.stats{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 210%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.above{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 60%;
+}
+
+.below{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 40%;
+}
+
+.space{
+  width: 100%;
+  height: 5%;
+}
+
+.users{
+  width: 100%;
+  height: 20%;
+}
+
+.ngo,.donor,.needy,.service{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+  float: left;
+  font-size: 1.25rem;
+}
+
+.ngo h1,.donor h1,.needy h1,.service h1,.campaign h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  background: white;
+  border-radius: 20px;
+}
+
+.user{
+  font-weight: lighter;
+}
+
+.campaign,.donations{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+}
+
+.donations h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  height: 100%;
+  background: white;
+  border-radius: 20px;
+}
+
+.numbers{
+  width: 100%;
+  height: 20%;
+}
+
+.total,.completion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.total h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  height: 100%;
+  background: white;
+  border-radius: 20px;
+  margin-left: 5%;
+}
+
+.completion h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  height: 100%;
+  background: white;
+  border-radius: 20px;
+  margin-right: 5%;
+}
+
+.ngo h1:hover,.donor h1:hover,.needy h1:hover,.service h1:hover,.campaign h1:hover,.donations h1:hover,.total h1:hover,.completion h1:hover{
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+}
+
+.feedback{
+  position: absolute;
+  top: 270%;
+  width: 100%;
+  height: 60%;
+  background: white;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.up{
+  width: 100%;
+  height: 30%;
+}
+
+.send{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+  float: left;
+}
+
+.value{
+  font-size: 3.5vw;
+  font-family: 'Brush Script MT', cursive;
+  filter: opacity(75%);
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+
+.button input{
+  width: 25%;
+  height: 40%;
+  background: #2774bc;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: larger;
+}
+
+.button input:hover{
+  cursor: pointer;
+  background: #6cace4;
+}
+
+.down{
+  width: 100%;
+  height: 70%;
+}
+
+.one,.two,.three{
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+
+.four{
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+
+.label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: x-large;
+}
+
+.input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+}
+
+.input input{
+  width: 90%;
+  height: 20%;
+  background: rgb(108 172 228 / 0.25);
+  border: 0;
+  border-radius: 40px;
+  text-align: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.input textarea{
+  width: 90%;
+  height: 50%;
+  background: rgb(108 172 228 / 0.25);
+  border: 0;
+  border-radius: 20px;
+  text-align: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  resize: none;
+}
+
+.enter{
+  width: 90%;
+  height: 90%;
+}
+
 @media screen and (orientation:portrait){
   .navbar{
     height: 15vh;
