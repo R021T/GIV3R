@@ -218,7 +218,7 @@ export default function Statistics(){
                 <div className="numbers">
                     {data7 && (
                         <div className="total">
-                            <h1>{data7.data.id_count.toFixed(6)}&nbsp;<div className="user">ETH raised</div></h1>
+                            <h1>{data7?.data?.id_count.toFixed(6)}&nbsp;<div className="user">ETH raised</div></h1>
                         </div>
                     )}
                     {data5 && data8 && (
