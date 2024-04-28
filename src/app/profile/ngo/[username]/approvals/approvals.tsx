@@ -26,24 +26,23 @@ interface ApiResponse {
   }
 }
 
-const router=useRouter()
-async function handleDeny(user: string){
+export default function Approvals({ session }: { session: string }) {
+  const router=useRouter()
+  const [data, setData] = useState<ApiResponse | null>(null)
+  const [isLoading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  async function handleDeny(user: string){
   const response=await fetch("/api/profile/ngo/denials",{
     method:"POST",
     body: JSON.stringify({
         username: user
     })
-})
-if(response){
-    router.push("/profile")
-    router.refresh()
-}
-}
-
-export default function Approvals({ session }: { session: string }) {
-  const [data, setData] = useState<ApiResponse | null>(null)
-  const [isLoading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  })
+  if(response){
+      router.push("/profile")
+      router.refresh()
+  }}
 
   useEffect(() => {
     fetch("/api/profile/ngo/approvals")
