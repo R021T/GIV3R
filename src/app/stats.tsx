@@ -154,7 +154,7 @@ export default function Statistics(){
                     <Image className="error" priority={true} src={"/error.png"} width={300} height={300} alt="Error"/>
                 </div>
                 <div className="below">
-                    <h1>Error loading profile!</h1>
+                    <h1>Error loading stats!</h1>
                 </div>
             </div>
         </>
@@ -169,7 +169,7 @@ export default function Statistics(){
                     <Image className="missing" priority={true} src={"/missing.png"} width={300} height={300} alt="Missing"/>
                 </div>
                 <div className="below">
-                    <h1>No profile data.</h1>
+                    <h1>No stats data.</h1>
                 </div>
             </div>
         </>
@@ -218,12 +218,12 @@ export default function Statistics(){
                 <div className="numbers">
                     {data7 && (
                         <div className="total">
-                            <h1>{data7.data.id_count}&nbsp;<div className="user">ETH raised</div></h1>
+                            <h1>{(data7.data.id_count ?? 0).toFixed(6)}&nbsp;<div className="user">ETH raised</div></h1>
                         </div>
                     )}
                     {data5 && data8 && (
                         <div className="completion">
-                            <h1>{((data8.data.id_count)/(data5.data.id_count))*100}<div className="user">% Completion rate</div></h1>
+                            <h1>{isNaN(((data8.data.id_count)/(data5.data.id_count))*100) ? 0 : ((data8.data.id_count)/(data5.data.id_count))*100}<div className="user">% Completion rate</div></h1>
                         </div>
                     )}
                 </div>

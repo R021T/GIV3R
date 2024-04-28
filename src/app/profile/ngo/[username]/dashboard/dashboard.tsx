@@ -45,7 +45,7 @@ export default function Dashboard() {
   }, [])
 
   useEffect(() => {
-    fetch("/api/profile/donor/dashboard/recent")
+    fetch("/api/profile/ngo/dashboard/recent")
       .then((res) => res.json())
       .then((apiData: ApiResponse2) => {
         setData2(apiData)
