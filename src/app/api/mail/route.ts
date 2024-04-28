@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server"
 import nodemailer from "nodemailer"
+import dotenv from "dotenv"
+
+dotenv.config()
 
 export async function POST(request:Request) {
     try{
@@ -10,8 +13,8 @@ export async function POST(request:Request) {
             port: 465,
             secure: true,
             auth: {
-                user: "giv3r.vercel.app@gmail.com",
-                pass: "ksad zjru tfyt lbkq"
+                user: process.env.GMAIL_USER,
+                pass: process.env.GMAIL_PASS
             },
             tls: {
                 rejectUnauthorized: false
