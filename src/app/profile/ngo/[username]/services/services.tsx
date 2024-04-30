@@ -1,28 +1,34 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import styles from "./campaign.module.css"
+import styles from "./services.module.css"
 import Image from "next/image"
 import Link from 'next/link'
 import { signOut } from 'next-auth/react'
 
 interface ApiResponse {
   data: {
-    map(arg0: (campaign: any, index: number) => React.JSX.Element): React.ReactNode
+    map(arg0: (service: any, index: number) => React.JSX.Element): React.ReactNode
+    id: number,
     name: string,
-    cause: string,
-    volunteers: number,
-    target: number,
-    raised: number
+    email: string,
+    phone: number,
+    country: string,
+    state: string,
+    district: string,
+    city: string,
+    pin: number,
+    wallet: string,
+    service: string
   }
 }
 
-export default function Campaigns({ session }: { session: string }) {
+export default function Services({ session }: { session: string }) {
   const [data, setData] = useState<ApiResponse | null>(null)
   const [isLoading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch("/api/profile/ngo/campaigns")
+    fetch("/api/profile/ngo/services")
       .then((res) => res.json())
       .then((apiData: ApiResponse) => {
         setData(apiData)
@@ -102,7 +108,7 @@ export default function Campaigns({ session }: { session: string }) {
             </div>
             <div className={styles.select}>
               <Link className={styles.link} href={`/profile/ngo/${session}/campaigns`}>
-                <button className={styles.active}>Campaigns</button>
+                <button className={styles.button}>Campaigns</button>
               </Link>
             </div>
             <div className={styles.select}>
@@ -112,7 +118,7 @@ export default function Campaigns({ session }: { session: string }) {
             </div>
             <div className={styles.select}>
               <Link className={styles.link} href={`/profile/ngo/${session}/services`}>
-                <button className={styles.button}>Services</button>
+                <button className={styles.active}>Services</button>
               </Link>
             </div>
           </div>
@@ -120,44 +126,36 @@ export default function Campaigns({ session }: { session: string }) {
             <button className={styles.logout} onClick={()=>{signOut()}}>Logout</button>
           </div>
         </div>
-        <div className={styles.campaign}>
+        <div className={styles.donations}>
             <div className={styles.top}>
-                <h1 className={styles.title}>Active Campaigns</h1>
+                <h1 className={styles.title}>Select Service</h1>
             </div>
             <div className={styles.bottom}>
-                <div className={styles.list}>
-                  <div className={styles.high}>
-                    <table className={styles.table}>
-                      <thead>
-                        <tr>
-                          <th>ID</th>
-                          <th>Name</th>
-                          <th>Cause</th>
-                          <th>Volunteers</th>
-                          <th>Target</th>
-                          <th>Raised</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {data.data.map((campaign: any, index: number) => (
-                          <tr key={index}>
-                            <td>{index}</td>
-                            <td>{campaign.name}</td>
-                            <td>{campaign.cause}</td>
-                            <td>{campaign.volunteers}</td>
-                            <td>{campaign.target}</td>
-                            <td>{campaign.raised}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div className={styles.low}>
-                      <Link className={styles.redirect} href={`/profile/ngo/${session}/campaigns/create`}>
-                          <button className={styles.create}>Create</button>
-                      </Link>
-                  </div>
+                <div className={styles.flex}>
+                    {data.data.map((service: any,index: number) => (
+                        <div className={styles.pending} key={index}>
+                            <div className={styles.list}>
+                                <div className={styles.left}>
+                                    <p>{service.name} for {service.service}</p>
+                                </div>
+                                <div className={styles.right}>
+                                    <Link className={styles.pay} href={{
+                                        pathname: `/profile/ngo/${session}/services/pay`,
+                                        query: {
+                                            id: service.id,
+                                            name: service.name,
+                                            email: service.email,
+                                            phone: service.phone,
+                                            address: `${service.city}, ${service.district}, ${service.state}, ${service.country} -${service.pin}`,
+                                            wallet: service.wallet,
+                                            service: service.service
+                                        }
+                                    }}>Pay</Link>
+                                </div>
+                            </div>
+                            <div className={styles.space}></div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

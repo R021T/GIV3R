@@ -133,6 +133,11 @@ export default function Approvals({ session }: { session: string }) {
                 <button className={styles.active}>Approvals</button>
               </Link>
             </div>
+            <div className={styles.select}>
+              <Link className={styles.link} href={`/profile/ngo/${session}/services`}>
+                <button className={styles.button}>Services</button>
+              </Link>
+            </div>
           </div>
           <div className={styles.three}>
             <button className={styles.logout} onClick={()=>{signOut()}}>Logout</button>

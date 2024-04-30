@@ -1,28 +1,26 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import styles from "./campaign.module.css"
+import styles from "./payments.module.css"
 import Image from "next/image"
 import Link from 'next/link'
 import { signOut } from 'next-auth/react'
 
 interface ApiResponse {
   data: {
-    map(arg0: (campaign: any, index: number) => React.JSX.Element): React.ReactNode
-    name: string,
-    cause: string,
-    volunteers: number,
-    target: number,
-    raised: number
+    map(arg0: (donor: any, index: number) => React.JSX.Element): React.ReactNode
+    from_name: string,
+    amount: number,
+    campaign_id: number
   }
 }
 
-export default function Campaigns({ session }: { session: string }) {
+export default function Payments({ session }: { session: string }) {
   const [data, setData] = useState<ApiResponse | null>(null)
   const [isLoading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch("/api/profile/ngo/campaigns")
+    fetch("/api/profile/service/payments")
       .then((res) => res.json())
       .then((apiData: ApiResponse) => {
         setData(apiData)
@@ -91,28 +89,13 @@ export default function Campaigns({ session }: { session: string }) {
           </div>
           <div className={styles.two}>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${session}/dashboard`}>
+              <Link className={styles.link} href={`/profile/service/${session}/dashboard`}>
                 <button className={styles.button}>Dashboard</button>
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${session}/donations`}>
-                <button className={styles.button}>Donations</button>
-              </Link>
-            </div>
-            <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${session}/campaigns`}>
-                <button className={styles.active}>Campaigns</button>
-              </Link>
-            </div>
-            <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${session}/approvals`}>
-                <button className={styles.button}>Approvals</button>
-              </Link>
-            </div>
-            <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${session}/services`}>
-                <button className={styles.button}>Services</button>
+              <Link className={styles.link} href={`/profile/service/${session}/payments`}>
+                <button className={styles.active}>Payments</button>
               </Link>
             </div>
           </div>
@@ -120,44 +103,20 @@ export default function Campaigns({ session }: { session: string }) {
             <button className={styles.logout} onClick={()=>{signOut()}}>Logout</button>
           </div>
         </div>
-        <div className={styles.campaign}>
+        <div className={styles.donations}>
             <div className={styles.top}>
-                <h1 className={styles.title}>Active Campaigns</h1>
+                <h1 className={styles.title}>Payment History</h1>
             </div>
             <div className={styles.bottom}>
-                <div className={styles.list}>
-                  <div className={styles.high}>
-                    <table className={styles.table}>
-                      <thead>
-                        <tr>
-                          <th>ID</th>
-                          <th>Name</th>
-                          <th>Cause</th>
-                          <th>Volunteers</th>
-                          <th>Target</th>
-                          <th>Raised</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {data.data.map((campaign: any, index: number) => (
-                          <tr key={index}>
-                            <td>{index}</td>
-                            <td>{campaign.name}</td>
-                            <td>{campaign.cause}</td>
-                            <td>{campaign.volunteers}</td>
-                            <td>{campaign.target}</td>
-                            <td>{campaign.raised}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div className={styles.low}>
-                      <Link className={styles.redirect} href={`/profile/ngo/${session}/campaigns/create`}>
-                          <button className={styles.create}>Create</button>
-                      </Link>
-                  </div>
+                <div className={styles.flex}>
+                    {data.data.map((donor: any,index: number) => (
+                        <div className={styles.pending} key={index}>
+                            <div className={styles.list}>
+                                <p>Received {donor.amount} ETH from {donor.from_name} through Service {donor.campaign_id}</p>
+                            </div>
+                            <div className={styles.space}></div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

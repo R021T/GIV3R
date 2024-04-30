@@ -9,9 +9,9 @@ interface ApiResponse {
   data: {
     name: string,
     username: string,
-    campaigns: number,
-    volunteers: number,
-    wallet: string
+    service: string,
+    wallet: string,
+    total: number
   }
 }
 
@@ -31,7 +31,7 @@ export default function Dashboard() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch("/api/profile/ngo/dashboard")
+    fetch("/api/profile/service/dashboard")
       .then((res) => res.json())
       .then((apiData: ApiResponse) => {
         setData(apiData)
@@ -45,7 +45,7 @@ export default function Dashboard() {
   }, [])
 
   useEffect(() => {
-    fetch("/api/profile/ngo/dashboard/recent")
+    fetch("/api/profile/service/dashboard/recent")
       .then((res) => res.json())
       .then((apiData: ApiResponse2) => {
         setData2(apiData)
@@ -114,28 +114,13 @@ export default function Dashboard() {
           </div>
           <div className={styles.two}>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}/dashboard`}>
+              <Link className={styles.link} href={`/profile/service/${data.data.username}/dashboard`}>
                 <button className={styles.active}>Dashboard</button>
               </Link>
             </div>
             <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}/donations`}>
-                <button className={styles.button}>Donations</button>
-              </Link>
-            </div>
-            <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}/campaigns`}>
-                <button className={styles.button}>Campaigns</button>
-              </Link>
-            </div>
-            <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}/approvals`}>
-                <button className={styles.button}>Approvals</button>
-              </Link>
-            </div>
-            <div className={styles.select}>
-              <Link className={styles.link} href={`/profile/ngo/${data.data.username}/services`}>
-                <button className={styles.button}>Services</button>
+              <Link className={styles.link} href={`/profile/service/${data.data.username}/payments`}>
+                <button className={styles.button}>Payments</button>
               </Link>
             </div>
           </div>
@@ -164,23 +149,23 @@ export default function Dashboard() {
               <div className={styles.bottom}>
                 <div className={styles.west}>
                   <div className={styles.volunteers}>
-                    <p>Number of volunteers: {data.data.volunteers}</p>
+                    <p>Service type: {data.data.service}</p>
                   </div>
                 </div>
                 <div className={styles.east}>
                   <div className={styles.campaigns}>
-                    <p>Number of campaigns: {data.data.campaigns}</p>
+                    <p>Total: {data.data.total} ETH</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className={styles.right}>
               <div className={styles.recent}>
-              <p className={styles.title}>Recent Donations</p>
+                <p className={styles.title}>Recent Payments</p>
                 <br/>
                 <div className={styles.history}>
                   {data2?.data.map((recent: any,index: number) => (
-                    <p key={index}>{recent.amount} from {recent.type}: {recent.campaign_id}</p>
+                    <p key={index}>{recent.amount} from Service: {recent.campaign_id}</p>
                   ))}
                 </div>
               </div>

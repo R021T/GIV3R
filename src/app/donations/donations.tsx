@@ -85,7 +85,9 @@ export default function DonationsPage(){
                     {data.data.map((donations: any, index: number) => (
                         <>
                             <div className={styles.card} key={index}>
-                                <p>{donations.from_name} donated {donations.amount} ETH to {donations.to_name} through Campaign {donations.campaign_id} ({donations.type})</p>
+                                {donations.type === 'DB' || donations.type === 'CC' ? (
+                                    <p>{donations.from_name} donated {donations.amount} ETH to {donations.to_name} through Campaign {donations.campaign_id} ({donations.type})</p>
+                                ): <p>{donations.from_name} paid {donations.amount} ETH to {donations.to_name} for {donations.type} (Service)</p>}
                             </div>
                             <div className={styles.space}></div>
                         </>
