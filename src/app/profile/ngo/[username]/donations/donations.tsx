@@ -84,7 +84,9 @@ export default function Donations({ session }: { session: string }) {
       <div className={styles.canvas}>
         <div className={styles.bar}>
           <div className={styles.one}>
-            <Image className={styles.logo} priority={true} src={"/logo.png"} width={300} height={150} alt="GIV3R"/>
+            <Link className={styles.link} href={"/"}>
+              <Image className={styles.logo} priority={true} src={"/logo.png"} width={300} height={150} alt="GIV3R"/>
+            </Link>
           </div>
           <div className={styles.two}>
             <div className={styles.select}>

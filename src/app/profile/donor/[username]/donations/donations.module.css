@@ -143,14 +143,14 @@
 .bottom{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
-    height: 80%;
+    height: 60%;
 }
 
 .flex{
     width: 80%;
-    height: 90%;
+    height: 100%;
     overflow-y: auto;
 }
 
@@ -173,6 +173,34 @@
 .space{
     width: 100%;
     height: 10%;
+}
+
+.donate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+
+.donating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 30%;
+    background: #2774bc;
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    text-decoration: none;
+}
+
+.donating:hover{
+    cursor: pointer;
+    background: #6cace4;
 }
 
 @media screen and (orientation:portrait){

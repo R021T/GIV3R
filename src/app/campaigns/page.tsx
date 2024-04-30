@@ -1,6 +1,7 @@
 import styles from "./campaigns.module.css"
 import Image from "next/image"
 import CampaignsPage from "./campaigns";
+import Link from "next/link";
 
 export default async function Campaigns(){
     return(
@@ -10,7 +11,9 @@ export default async function Campaigns(){
                 <div className={styles.top}>
                     <div className={styles.one}>
                         <div className={styles.circle}>
-                            <Image className={styles.logo} priority={true} src={"/logo.png"} width={500} height={250} alt="GIV3R"/>
+                            <Link className={styles.home} href={"/"}>
+                                <Image className={styles.logo} priority={true} src={"/logo.png"} width={500} height={250} alt="GIV3R"/>
+                            </Link>
                         </div>
                     </div>
                     <div className={styles.two}></div>

@@ -3,6 +3,7 @@ import { redirect } from "next/navigation"
 import styles from "./payments.module.css"
 import Image from "next/image"
 import Form from "./form"
+import Link from "next/link"
 
 export default async function pay({searchParams}:{
     searchParams: {
@@ -39,7 +40,9 @@ export default async function pay({searchParams}:{
                 <div className={styles.top}>
                     <div className={styles.one}>
                         <div className={styles.circle}>
-                            <Image className={styles.logo} priority={true} src={"/logo.png"} width={500} height={250} alt="GIV3R"/>
+                            <Link className={styles.home} href={"/"}>
+                                <Image className={styles.logo} priority={true} src={"/logo.png"} width={500} height={250} alt="GIV3R"/>
+                            </Link>
                         </div>
                     </div>
                     <div className={styles.two}></div>

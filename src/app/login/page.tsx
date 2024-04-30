@@ -17,7 +17,9 @@ export default async function Login() {
                 <div className={styles.left}>
                     <div className={styles.bar}></div>
                     <div className={styles.circle}>
-                        <Image className={styles.logo} priority={true} src={"/logo.png"} width={500} height={250} alt="GIV3R"/>
+                        <Link className={styles.home} href={"/"}>
+                            <Image className={styles.logo} priority={true} src={"/logo.png"} width={500} height={250} alt="GIV3R"/>
+                        </Link>
                     </div>
                 </div>
                 <div className={styles.right}>

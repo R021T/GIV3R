@@ -38,7 +38,9 @@ export default function Home() {
           <Link href={"/campaigns"}>
             <button className="campaigns">CAMPAIGNS</button>
           </Link>
-          <Image className="title" priority={true} src={"/logo.png"} width={600} height={300} alt="GIV3R"/>
+          <Link href={"/"}>
+            <Image className="title" priority={true} src={"/logo.png"} width={600} height={300} alt="GIV3R"/>
+          </Link>
           <Link href={"/donations"}>
             <button className="volunteer">DONATIONS</button>
           </Link>
