@@ -151,7 +151,7 @@ export default function Dashboard() {
               <div className={styles.bottom}>
                 <div className={styles.west}>
                   <div className={styles.volunteers}>
-                    <p>Total donation: {data.data.total}</p>
+                    <p>Total donation: {data.data.total} ETH</p>
                   </div>
                 </div>
                 <div className={styles.east}>

@@ -9,7 +9,7 @@ export async function POST(request:Request) {
         const from_data=await sql`select * from ngo where username=${session?.user?.name};`
         const from_id=from_data.rows[0].id
         const from_name=from_data.rows[0].name
-        const response=await sql`insert into payment(from_id,from_name,to_id,to_name,amount,type,campaign_id) values(${from_id},${from_name},${to_id},${to_name},${amount},${type},${id});`
+        const response=await sql`insert into payment(from_id,from_name,to_id,to_name,amount,type,campaign_id,ngo_id) values(${from_id},${from_name},${to_id},${to_name},${amount},${type},${id},${from_id});`
         if(response){
             const update=await sql`update service set total=total+${amount} where id=${to_id};`
         }

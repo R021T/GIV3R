@@ -17,7 +17,9 @@ export async function POST(request:Request) {
             const from_middlename=from_data.rows[0].middlename
             const from_lastname=from_data.rows[0].lastname
             const from_name=`${from_firstname} ${from_middlename} ${from_lastname}`
-            const response=await sql`insert into payment(from_id,from_name,to_id,to_name,amount,type,campaign_id) values(${from_id},${from_name},${to_id},${to_name},${amount},${type},${id});`
+            const ngo=await sql`select * from campaign where id=${id};`
+            const ngo_id=ngo.rows[0].ngo_id
+            const response=await sql`insert into payment(from_id,from_name,to_id,to_name,amount,type,campaign_id,ngo_id) values(${from_id},${from_name},${to_id},${to_name},${amount},${type},${id},${ngo_id});`
             if(response){
                 const campaign=await sql`select * from campaign where id=${id};`
                 const campaign_target=campaign.rows[0].target
@@ -41,7 +43,9 @@ export async function POST(request:Request) {
             const from_middlename=from_data.rows[0].middlename
             const from_lastname=from_data.rows[0].lastname
             const from_name=`${from_firstname} ${from_middlename} ${from_lastname}`
-            const response=await sql`insert into payment(from_id,from_name,to_id,to_name,amount,type,campaign_id) values(${from_id},${from_name},${to_id},${to_name},${amount},${type},${id});`
+            const ngo=await sql`select * from campaign where id=${id};`
+            const ngo_id=ngo.rows[0].ngo_id
+            const response=await sql`insert into payment(from_id,from_name,to_id,to_name,amount,type,campaign_id,ngo_id) values(${from_id},${from_name},${to_id},${to_name},${amount},${type},${id},${ngo_id});`
             if(response){
                 const campaign=await sql`select * from campaign where id=${id};`
                 const campaign_target=campaign.rows[0].target
