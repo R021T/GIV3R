@@ -128,7 +128,9 @@ export default function Donations({ session }: { session: string }) {
                     {data.data.map((donor: any,index: number) => (
                         <div className={styles.pending} key={index}>
                             <div className={styles.list}>
+                              {donor.type === 'DB' || donor.type === 'CC' ? (
                                 <p>Received {donor.amount} ETH from {donor.from_name} to Campaign {donor.campaign_id} of Type {donor.type}</p>
+                              ): <p>Paid {donor.amount} ETH to {donor.to_name} for {donor.type} in Service {donor.campaign_id}</p>}
                             </div>
                             <div className={styles.space}></div>
                         </div>

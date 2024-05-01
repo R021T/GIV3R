@@ -77,7 +77,7 @@ export default function Home() {
               <p className="is">Why <br/>use <br/><b className="giv3r">GIV3R</b>?</p>
             </div>
             <div className="back">
-              <p className="desc">GIV3R is a decentralized charity portal which aims at integrating security, transparency and tracking for your valuable donations to various NGOs.</p>
+              <p className="desc">Use GIV3R to harness a secure, trustable and transparent environment where you get to track each and every donation you make.</p>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function Home() {
               <p className="is">How <br/>to use <br/><b className="giv3r">GIV3R</b>?</p>
             </div>
             <div className="back">
-              <p className="desc">GIV3R is a decentralized charity portal which aims at integrating security, transparency and tracking for your valuable donations to various NGOs.</p>
+              <p className="desc">Register under the required role you seek. Access the corresponding dashboard. Use the available features to their fullest.</p>
             </div>
           </div>
         </div>

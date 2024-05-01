@@ -6,7 +6,7 @@ export async function GET(){
     const session=await getServerSession()
     let data
     if(session || !session){
-        const response=await sql`select sum(amount) as id_count from payment;`
+        const response=await sql`select sum(amount) as id_count from payment where type in ('DB','CC');`
         data=response.rows[0]
     }
     return NextResponse.json({data})
