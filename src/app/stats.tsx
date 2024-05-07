@@ -223,7 +223,7 @@ export default function Statistics(){
                     )}
                     {data5 && data8 && (
                         <div className="completion">
-                            <h1>{isNaN(((data8.data.id_count)/(data5.data.id_count))*100) ? 0 : ((data8.data.id_count)/(data5.data.id_count))*100}<div className="user">% Completion rate</div></h1>
+                            <h1>{isNaN(((data8.data.id_count)/(data5.data.id_count))*100) ? 0 : (((data8.data.id_count)/(data5.data.id_count))*100).toFixed(2)}<div className="user">% Completion rate</div></h1>
                         </div>
                     )}
                 </div>
