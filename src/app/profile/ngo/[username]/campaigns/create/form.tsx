@@ -8,7 +8,7 @@ import { ethers } from "../../../../../../../node_modules/ethers/lib/index"
 export default function Form({ session }: { session: string }) {
     const router=useRouter()
     const contractABI = SolidFundrABI.abi;
-    const contractAddress="0x2807bb2761f25Bc22c00cB804C92DAA5B39336ba";
+    const contractAddress="0xb00F4d0d17f891E5976FB663FE6d54d432E6a877";
 
     const initWallet=async()=>{
         if(window.ethereum){

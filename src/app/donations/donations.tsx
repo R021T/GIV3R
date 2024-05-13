@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react"
 import styles from "./donations.module.css"
 import Image from "next/image"
+import Link from "next/link"
 
 interface ApiResponse {
     data: {
@@ -10,7 +11,8 @@ interface ApiResponse {
         amout: number,
         to_name: string,
         type: string,
-        campaign_id: number
+        campaign_id: number,
+        hash: string
     }
 }
 
@@ -86,8 +88,8 @@ export default function DonationsPage(){
                         <>
                             <div className={styles.card} key={index}>
                                 {donations.type === 'DB' || donations.type === 'CC' ? (
-                                    <p>{donations.from_name} donated {donations.amount} ETH to {donations.to_name} through Campaign {donations.campaign_id} ({donations.type})</p>
-                                ): <p>{donations.from_name} paid {donations.amount} ETH to {donations.to_name} for {donations.type} (Service)</p>}
+                                    <Link className={styles.link} href={`https://sepolia.etherscan.io/tx/${donations.hash}`}>{donations.from_name} donated {donations.amount} ETH to {donations.to_name} through Campaign {donations.campaign_id} ({donations.type})</Link>
+                                ): <Link className={styles.link} href={`https://sepolia.etherscan.io/tx/${donations.hash}`}>{donations.from_name} paid {donations.amount} ETH to {donations.to_name} for {donations.type} (Service)</Link>}
                             </div>
                             <div className={styles.space}></div>
                         </>

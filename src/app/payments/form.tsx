@@ -8,7 +8,7 @@ import { ethers } from "../../../node_modules/ethers/lib/index"
 export default function Form({details}: any) {
     const router=useRouter()
     const contractABI = SolidFundrABI.abi;
-    const contractAddress = "0x2807bb2761f25Bc22c00cB804C92DAA5B39336ba";
+    const contractAddress="0xb00F4d0d17f891E5976FB663FE6d54d432E6a877";
     
     const initWallet=async()=>{
         if(window.ethereum){
@@ -39,7 +39,8 @@ export default function Form({details}: any) {
                     from: formData.get("from"),
                     to: formData.get("to"),
                     left: formData.get("left"),
-                    amount: formData.get("amount")
+                    amount: formData.get("amount"),
+                    hash: donationTx.hash
                 })
             })
             if(response){

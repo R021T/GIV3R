@@ -10,7 +10,8 @@ interface ApiResponse {
     map(arg0: (donor: any, index: number) => React.JSX.Element): React.ReactNode
     from_name: string,
     amount: number,
-    campaign_id: number
+    campaign_id: number,
+    hash: string
   }
 }
 
@@ -112,7 +113,7 @@ export default function Payments({ session }: { session: string }) {
                     {data.data.map((donor: any,index: number) => (
                         <div className={styles.pending} key={index}>
                             <div className={styles.list}>
-                                <p>Received {donor.amount} ETH from {donor.from_name} through Service {donor.campaign_id}</p>
+                                <Link className={styles.txn} href={`https://sepolia.etherscan.io/tx/${donor.hash}`}>Received {donor.amount} ETH from {donor.from_name} through Service {donor.campaign_id}</Link>
                             </div>
                             <div className={styles.space}></div>
                         </div>
