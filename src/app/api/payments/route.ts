@@ -47,7 +47,7 @@ export async function POST(request:Request) {
                         }
                     })
 
-                    const getTheEmail=await sql`select * from ngo where id=${to_id}`
+                    const getTheEmail=await sql`select * from needy where id=${to_id}`
                     const theEmail=getTheEmail.rows[0].email
             
                     const mailOptions={
