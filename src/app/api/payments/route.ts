@@ -51,7 +51,7 @@ export async function POST(request:Request) {
                     const theEmail=getTheEmail.rows[0].email
             
                     const mailOptions={
-                        from: process.env.GMAIL_USER,
+                        from: "giv3r.vercel.app@gmail.com",
                         to: theEmail,
                         subject: "Congratulations! Your Campaign Has Reached Its Target Amount",
                         html: `
@@ -92,7 +92,7 @@ export async function POST(request:Request) {
             const email=getEmail.rows[0].email
     
             const mailOptions={
-                from: process.env.GMAIL_USER,
+                from: "giv3r.vercel.app@gmail.com",
                 to: email,
                 subject: "You've Received a Donation",
                 html: `
@@ -153,7 +153,7 @@ export async function POST(request:Request) {
                     const theEmail=getTheEmail.rows[0].email
             
                     const mailOptions={
-                        from: process.env.GMAIL_USER,
+                        from: "giv3r.vercel.app@gmail.com",
                         to: theEmail,
                         subject: "Congratulations! Your Campaign Has Reached Its Target Amount",
                         html: `
@@ -194,7 +194,7 @@ export async function POST(request:Request) {
             const email=getEmail.rows[0].email
     
             const mailOptions={
-                from: process.env.GMAIL_USER,
+                from: "giv3r.vercel.app@gmail.com",
                 to: email,
                 subject: "You've Received a Donation",
                 html: `
